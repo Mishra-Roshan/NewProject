@@ -25,8 +25,8 @@ const UserRegister = () => {
     }
 
     const payload = {
-      name: form.username,
-      contact_email: form.emal,
+      username: form.username,
+      email: form.email,
       password: form.password,
 
     };

@@ -702,3 +702,8 @@ WARNING 2025-04-24 10:35:47,544 log 17888 17900 Bad Request: /user/user-login/
 WARNING 2025-04-24 10:35:47,545 basehttp 17888 17900 "POST /user/user-login/ HTTP/1.1" 400 32
 WARNING 2025-04-24 10:41:31,895 log 17888 532 Bad Request: /user/user-login/
 WARNING 2025-04-24 10:41:31,897 basehttp 17888 532 "POST /user/user-login/ HTTP/1.1" 400 32
+INFO 2025-04-24 11:09:12,406 autoreload 17568 11132 Watching for file changes with StatReloader
+WARNING 2025-04-24 11:10:33,679 log 17568 296 Bad Request: /user/user-register/
+WARNING 2025-04-24 11:10:33,680 basehttp 17568 296 "POST /user/user-register/ HTTP/1.1" 400 40
+INFO 2025-04-24 11:14:49,415 autoreload 17568 11132 C:\Users\roshan.mishra_jadegl\Documents\Project\backend\users\serializers.py changed, reloading.
+INFO 2025-04-24 11:14:50,412 autoreload 11872 2512 Watching for file changes with StatReloader
