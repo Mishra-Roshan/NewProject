@@ -1,0 +1,20 @@
+# Python bytecode files
+*.pyc
+__pycache__/
+
+# Django migrations
+/migrations/.pyc
+*/migrations/__pycache__/
+
+# VS Code settings (if applicable)
+.vscode/
+
+# Environment files
+.env
+*.env
+
+# Mac system files
+.DS_Store
+
+# SQLite database
+*.sqlite3

@@ -1,0 +1,704 @@
+INFO 2025-04-23 16:06:29,675 autoreload 14868 15932 Watching for file changes with StatReloader
+INFO 2025-04-23 16:06:51,846 autoreload 14868 15932 C:\Users\roshan.mishra_jadegl\Documents\Project\backend\organization\views.py changed, reloading.
+INFO 2025-04-23 16:06:52,764 autoreload 3764 13096 Watching for file changes with StatReloader
+WARNING 2025-04-23 16:07:01,705 log 3764 16188 Not Found: /
+WARNING 2025-04-23 16:07:01,706 basehttp 3764 16188 "GET / HTTP/1.1" 404 2310
+WARNING 2025-04-23 16:07:02,389 log 3764 16188 Not Found: /
+WARNING 2025-04-23 16:07:02,391 basehttp 3764 16188 "GET / HTTP/1.1" 404 2310
+WARNING 2025-04-23 16:07:02,648 log 3764 16188 Not Found: /favicon.ico
+WARNING 2025-04-23 16:07:02,649 basehttp 3764 16188 "GET /favicon.ico HTTP/1.1" 404 2361
+INFO 2025-04-23 16:07:22,567 basehttp 3764 9400 "GET /org/auth/register HTTP/1.1" 301 0
+WARNING 2025-04-23 16:07:22,636 log 3764 12928 Method Not Allowed: /org/auth/register/
+WARNING 2025-04-23 16:07:22,637 basehttp 3764 12928 "GET /org/auth/register/ HTTP/1.1" 405 5612
+INFO 2025-04-23 16:07:23,021 basehttp 3764 12928 "GET /static/rest_framework/css/bootstrap.min.css HTTP/1.1" 200 121457
+INFO 2025-04-23 16:07:23,025 basehttp 3764 12928 "GET /static/rest_framework/js/csrf.js HTTP/1.1" 200 1793
+INFO 2025-04-23 16:07:23,032 basehttp 3764 12928 "GET /static/rest_framework/js/bootstrap.min.js HTTP/1.1" 200 39680
+INFO 2025-04-23 16:07:23,036 basehttp 3764 12928 "GET /static/rest_framework/js/prettify-min.js HTTP/1.1" 200 13632
+INFO 2025-04-23 16:07:23,042 basehttp 3764 12928 "GET /static/rest_framework/js/default.js HTTP/1.1" 200 1268
+INFO 2025-04-23 16:07:23,047 basehttp 3764 13264 "GET /static/rest_framework/css/bootstrap-tweaks.css HTTP/1.1" 200 3426
+INFO 2025-04-23 16:07:23,048 basehttp 3764 12928 "GET /static/rest_framework/js/load-ajax-form.js HTTP/1.1" 200 59
+INFO 2025-04-23 16:07:23,066 basehttp 3764 16980 "GET /static/rest_framework/css/prettify.css HTTP/1.1" 200 817
+INFO 2025-04-23 16:07:23,083 basehttp 3764 14484 "GET /static/rest_framework/css/default.css HTTP/1.1" 200 1152
+INFO 2025-04-23 16:07:23,092 basehttp 3764 14484 "GET /static/rest_framework/img/grid.png HTTP/1.1" 200 1458
+INFO 2025-04-23 16:07:23,093 basehttp 3764 15400 "GET /static/rest_framework/js/ajax-form.js HTTP/1.1" 200 3796
+INFO 2025-04-23 16:07:23,100 basehttp 3764 16016 "GET /static/rest_framework/js/jquery-3.7.1.min.js HTTP/1.1" 200 87533
+WARNING 2025-04-23 16:07:33,378 log 3764 17148 Method Not Allowed: /org/auth/login/
+WARNING 2025-04-23 16:07:33,379 basehttp 3764 17148 "GET /org/auth/login/ HTTP/1.1" 405 5560
+WARNING 2025-04-23 16:08:20,978 log 3764 14456 Not Found: /api/auth/register/
+WARNING 2025-04-23 16:08:20,980 basehttp 3764 14456 "POST /api/auth/register/ HTTP/1.1" 404 2383
+INFO 2025-04-23 16:14:18,215 autoreload 9236 10568 Watching for file changes with StatReloader
+INFO 2025-04-23 16:14:29,959 basehttp 9236 10652 "OPTIONS /org/auth/register/ HTTP/1.1" 200 0
+WARNING 2025-04-23 16:14:30,025 log 9236 10652 Bad Request: /org/auth/register/
+WARNING 2025-04-23 16:14:30,026 basehttp 9236 10652 "POST /org/auth/register/ HTTP/1.1" 400 58
+INFO 2025-04-23 16:16:41,036 autoreload 9236 10568 C:\Users\roshan.mishra_jadegl\Documents\Project\backend\backend\settings.py changed, reloading.
+INFO 2025-04-23 16:16:41,941 autoreload 4020 9200 Watching for file changes with StatReloader
+WARNING 2025-04-23 16:16:54,935 log 4020 9300 Bad Request: /org/auth/register/
+WARNING 2025-04-23 16:16:54,937 basehttp 4020 9300 "POST /org/auth/register/ HTTP/1.1" 400 58
+WARNING 2025-04-23 16:18:33,731 log 4020 1864 Bad Request: /org/auth/register/
+WARNING 2025-04-23 16:18:33,732 basehttp 4020 1864 "POST /org/auth/register/ HTTP/1.1" 400 58
+WARNING 2025-04-23 16:19:05,260 log 4020 9372 Bad Request: /org/auth/register/
+WARNING 2025-04-23 16:19:05,261 basehttp 4020 9372 "POST /org/auth/register/ HTTP/1.1" 400 58
+INFO 2025-04-23 16:20:34,525 autoreload 4020 9200 C:\Users\roshan.mishra_jadegl\Documents\Project\backend\organization\models.py changed, reloading.
+INFO 2025-04-23 16:20:35,494 autoreload 1208 10312 Watching for file changes with StatReloader
+INFO 2025-04-23 16:21:22,876 autoreload 15340 10260 Watching for file changes with StatReloader
+WARNING 2025-04-23 16:21:27,949 log 15340 7056 Bad Request: /org/auth/register/
+WARNING 2025-04-23 16:21:27,950 basehttp 15340 7056 "POST /org/auth/register/ HTTP/1.1" 400 58
+WARNING 2025-04-23 16:21:46,871 log 15340 7056 Bad Request: /org/auth/register/
+WARNING 2025-04-23 16:21:46,873 basehttp 15340 7056 "POST /org/auth/register/ HTTP/1.1" 400 58
+WARNING 2025-04-23 16:38:07,610 log 15340 7604 Bad Request: /org/auth/register/
+WARNING 2025-04-23 16:38:07,612 basehttp 15340 7604 "POST /org/auth/register/ HTTP/1.1" 400 58
+WARNING 2025-04-23 16:52:21,090 log 15340 9724 Bad Request: /org/auth/register/
+WARNING 2025-04-23 16:52:21,091 basehttp 15340 9724 "POST /org/auth/register/ HTTP/1.1" 400 58
+WARNING 2025-04-23 16:54:32,893 log 15340 9724 Bad Request: /org/auth/register/
+WARNING 2025-04-23 16:54:32,894 basehttp 15340 9724 "POST /org/auth/register/ HTTP/1.1" 400 58
+WARNING 2025-04-23 16:54:49,391 log 15340 9724 Bad Request: /org/auth/register/
+WARNING 2025-04-23 16:54:49,392 basehttp 15340 9724 "POST /org/auth/register/ HTTP/1.1" 400 58
+INFO 2025-04-23 19:44:27,126 autoreload 15340 10260 C:\Users\roshan.mishra_jadegl\Documents\Project\backend\backend\urls.py changed, reloading.
+INFO 2025-04-23 19:44:28,789 autoreload 17704 17712 Watching for file changes with StatReloader
+INFO 2025-04-23 19:50:02,149 autoreload 17612 16996 Watching for file changes with StatReloader
+INFO 2025-04-23 19:51:15,276 autoreload 17728 1844 Watching for file changes with StatReloader
+INFO 2025-04-23 19:52:34,240 basehttp 17728 7836 "OPTIONS /org/auth/register/ HTTP/1.1" 200 0
+WARNING 2025-04-23 19:52:34,365 log 17728 7836 Bad Request: /org/auth/register/
+WARNING 2025-04-23 19:52:34,367 basehttp 17728 7836 "POST /org/auth/register/ HTTP/1.1" 400 58
+INFO 2025-04-23 19:55:37,058 autoreload 17728 1844 C:\Users\roshan.mishra_jadegl\Documents\Project\backend\organization\serializers.py changed, reloading.
+INFO 2025-04-23 19:55:38,062 autoreload 16544 17724 Watching for file changes with StatReloader
+INFO 2025-04-23 19:56:49,557 autoreload 16544 17724 C:\Users\roshan.mishra_jadegl\Documents\Project\backend\organization\views.py changed, reloading.
+INFO 2025-04-23 19:56:50,613 autoreload 18012 9776 Watching for file changes with StatReloader
+INFO 2025-04-23 19:56:55,821 basehttp 18012 17416 "OPTIONS /auth/register/ HTTP/1.1" 200 0
+WARNING 2025-04-23 19:56:55,849 log 18012 17416 Not Found: /auth/register/
+WARNING 2025-04-23 19:56:55,851 basehttp 18012 17416 "POST /auth/register/ HTTP/1.1" 404 2515
+ERROR 2025-04-23 19:57:34,788 log 18012 14548 Internal Server Error: /org/auth/register/
+Traceback (most recent call last):
+  File "C:\Users\roshan.mishra_jadegl\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.13_qbz5n2kfra8p0\LocalCache\local-packages\Python313\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\roshan.mishra_jadegl\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.13_qbz5n2kfra8p0\LocalCache\local-packages\Python313\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\roshan.mishra_jadegl\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.13_qbz5n2kfra8p0\LocalCache\local-packages\Python313\site-packages\django\views\decorators\csrf.py", line 65, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+  File "C:\Users\roshan.mishra_jadegl\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.13_qbz5n2kfra8p0\LocalCache\local-packages\Python313\site-packages\django\views\generic\base.py", line 104, in view
+    return self.dispatch(request, *args, **kwargs)
+           ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\roshan.mishra_jadegl\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.13_qbz5n2kfra8p0\LocalCache\local-packages\Python313\site-packages\rest_framework\views.py", line 515, in dispatch
+    response = self.handle_exception(exc)
+  File "C:\Users\roshan.mishra_jadegl\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.13_qbz5n2kfra8p0\LocalCache\local-packages\Python313\site-packages\rest_framework\views.py", line 475, in handle_exception
+    self.raise_uncaught_exception(exc)
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^
+  File "C:\Users\roshan.mishra_jadegl\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.13_qbz5n2kfra8p0\LocalCache\local-packages\Python313\site-packages\rest_framework\views.py", line 486, in raise_uncaught_exception
+    raise exc
+  File "C:\Users\roshan.mishra_jadegl\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.13_qbz5n2kfra8p0\LocalCache\local-packages\Python313\site-packages\rest_framework\views.py", line 512, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "C:\Users\roshan.mishra_jadegl\Documents\Project\backend\organization\views.py", line 16, in post
+    if serializer.is_valid():
+       ~~~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\roshan.mishra_jadegl\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.13_qbz5n2kfra8p0\LocalCache\local-packages\Python313\site-packages\rest_framework\serializers.py", line 225, in is_valid
+    self._validated_data = self.run_validation(self.initial_data)
+                           ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\roshan.mishra_jadegl\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.13_qbz5n2kfra8p0\LocalCache\local-packages\Python313\site-packages\rest_framework\serializers.py", line 444, in run_validation
+    value = self.to_internal_value(data)
+  File "C:\Users\roshan.mishra_jadegl\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.13_qbz5n2kfra8p0\LocalCache\local-packages\Python313\site-packages\rest_framework\serializers.py", line 497, in to_internal_value
+    for field in fields:
+                 ^^^^^^
+  File "C:\Users\roshan.mishra_jadegl\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.13_qbz5n2kfra8p0\LocalCache\local-packages\Python313\site-packages\rest_framework\serializers.py", line 380, in _writable_fields
+    for field in self.fields.values():
+                 ^^^^^^^^^^^
+  File "C:\Users\roshan.mishra_jadegl\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.13_qbz5n2kfra8p0\LocalCache\local-packages\Python313\site-packages\django\utils\functional.py", line 47, in __get__
+    res = instance.__dict__[self.name] = self.func(instance)
+                                         ~~~~~~~~~^^^^^^^^^^
+  File "C:\Users\roshan.mishra_jadegl\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.13_qbz5n2kfra8p0\LocalCache\local-packages\Python313\site-packages\rest_framework\serializers.py", line 374, in fields
+    for key, value in self.get_fields().items():
+                      ~~~~~~~~~~~~~~~^^
+  File "C:\Users\roshan.mishra_jadegl\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.13_qbz5n2kfra8p0\LocalCache\local-packages\Python313\site-packages\rest_framework\serializers.py", line 1105, in get_fields
+    field_class, field_kwargs = self.build_field(
+                                ~~~~~~~~~~~~~~~~^
+        source, info, model, depth
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Users\roshan.mishra_jadegl\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.13_qbz5n2kfra8p0\LocalCache\local-packages\Python313\site-packages\rest_framework\serializers.py", line 1251, in build_field
+    return self.build_unknown_field(field_name, model_class)
+           ~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\roshan.mishra_jadegl\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.13_qbz5n2kfra8p0\LocalCache\local-packages\Python313\site-packages\rest_framework\serializers.py", line 1369, in build_unknown_field
+    raise ImproperlyConfigured(
+    ...<2 lines>...
+    )
+django.core.exceptions.ImproperlyConfigured: Field name `name` is not valid for model `Organization` in `organization.serializers.OrganizationRegisterSerializer`.
+ERROR 2025-04-23 19:57:34,812 basehttp 18012 14548 "POST /org/auth/register/ HTTP/1.1" 500 140085
+ERROR 2025-04-23 19:57:59,658 log 18012 14548 Internal Server Error: /org/auth/register/
+Traceback (most recent call last):
+  File "C:\Users\roshan.mishra_jadegl\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.13_qbz5n2kfra8p0\LocalCache\local-packages\Python313\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\roshan.mishra_jadegl\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.13_qbz5n2kfra8p0\LocalCache\local-packages\Python313\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\roshan.mishra_jadegl\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.13_qbz5n2kfra8p0\LocalCache\local-packages\Python313\site-packages\django\views\decorators\csrf.py", line 65, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+  File "C:\Users\roshan.mishra_jadegl\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.13_qbz5n2kfra8p0\LocalCache\local-packages\Python313\site-packages\django\views\generic\base.py", line 104, in view
+    return self.dispatch(request, *args, **kwargs)
+           ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\roshan.mishra_jadegl\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.13_qbz5n2kfra8p0\LocalCache\local-packages\Python313\site-packages\rest_framework\views.py", line 515, in dispatch
+    response = self.handle_exception(exc)
+  File "C:\Users\roshan.mishra_jadegl\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.13_qbz5n2kfra8p0\LocalCache\local-packages\Python313\site-packages\rest_framework\views.py", line 475, in handle_exception
+    self.raise_uncaught_exception(exc)
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^
+  File "C:\Users\roshan.mishra_jadegl\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.13_qbz5n2kfra8p0\LocalCache\local-packages\Python313\site-packages\rest_framework\views.py", line 486, in raise_uncaught_exception
+    raise exc
+  File "C:\Users\roshan.mishra_jadegl\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.13_qbz5n2kfra8p0\LocalCache\local-packages\Python313\site-packages\rest_framework\views.py", line 512, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "C:\Users\roshan.mishra_jadegl\Documents\Project\backend\organization\views.py", line 16, in post
+    if serializer.is_valid():
+       ~~~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\roshan.mishra_jadegl\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.13_qbz5n2kfra8p0\LocalCache\local-packages\Python313\site-packages\rest_framework\serializers.py", line 225, in is_valid
+    self._validated_data = self.run_validation(self.initial_data)
+                           ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\roshan.mishra_jadegl\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.13_qbz5n2kfra8p0\LocalCache\local-packages\Python313\site-packages\rest_framework\serializers.py", line 444, in run_validation
+    value = self.to_internal_value(data)
+  File "C:\Users\roshan.mishra_jadegl\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.13_qbz5n2kfra8p0\LocalCache\local-packages\Python313\site-packages\rest_framework\serializers.py", line 497, in to_internal_value
+    for field in fields:
+                 ^^^^^^
+  File "C:\Users\roshan.mishra_jadegl\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.13_qbz5n2kfra8p0\LocalCache\local-packages\Python313\site-packages\rest_framework\serializers.py", line 380, in _writable_fields
+    for field in self.fields.values():
+                 ^^^^^^^^^^^
+  File "C:\Users\roshan.mishra_jadegl\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.13_qbz5n2kfra8p0\LocalCache\local-packages\Python313\site-packages\django\utils\functional.py", line 47, in __get__
+    res = instance.__dict__[self.name] = self.func(instance)
+                                         ~~~~~~~~~^^^^^^^^^^
+  File "C:\Users\roshan.mishra_jadegl\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.13_qbz5n2kfra8p0\LocalCache\local-packages\Python313\site-packages\rest_framework\serializers.py", line 374, in fields
+    for key, value in self.get_fields().items():
+                      ~~~~~~~~~~~~~~~^^
+  File "C:\Users\roshan.mishra_jadegl\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.13_qbz5n2kfra8p0\LocalCache\local-packages\Python313\site-packages\rest_framework\serializers.py", line 1105, in get_fields
+    field_class, field_kwargs = self.build_field(
+                                ~~~~~~~~~~~~~~~~^
+        source, info, model, depth
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Users\roshan.mishra_jadegl\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.13_qbz5n2kfra8p0\LocalCache\local-packages\Python313\site-packages\rest_framework\serializers.py", line 1251, in build_field
+    return self.build_unknown_field(field_name, model_class)
+           ~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\roshan.mishra_jadegl\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.13_qbz5n2kfra8p0\LocalCache\local-packages\Python313\site-packages\rest_framework\serializers.py", line 1369, in build_unknown_field
+    raise ImproperlyConfigured(
+    ...<2 lines>...
+    )
+django.core.exceptions.ImproperlyConfigured: Field name `name` is not valid for model `Organization` in `organization.serializers.OrganizationRegisterSerializer`.
+ERROR 2025-04-23 19:57:59,677 basehttp 18012 14548 "POST /org/auth/register/ HTTP/1.1" 500 140087
+INFO 2025-04-23 20:00:55,953 autoreload 18012 9776 C:\Users\roshan.mishra_jadegl\Documents\Project\backend\organization\models.py changed, reloading.
+INFO 2025-04-23 20:00:57,912 autoreload 1756 16824 Watching for file changes with StatReloader
+INFO 2025-04-23 20:02:19,949 autoreload 1716 11960 Watching for file changes with StatReloader
+INFO 2025-04-23 21:33:04,406 autoreload 6108 2168 Watching for file changes with StatReloader
+WARNING 2025-04-23 21:33:08,787 log 6108 12520 Not Found: /
+WARNING 2025-04-23 21:33:08,789 basehttp 6108 12520 "GET / HTTP/1.1" 404 2454
+WARNING 2025-04-23 21:33:09,116 log 6108 12520 Not Found: /favicon.ico
+WARNING 2025-04-23 21:33:09,118 basehttp 6108 12520 "GET /favicon.ico HTTP/1.1" 404 2505
+INFO 2025-04-23 21:33:14,217 basehttp 6108 11684 "GET /admin HTTP/1.1" 301 0
+INFO 2025-04-23 21:33:14,261 basehttp 6108 10468 "GET /admin/ HTTP/1.1" 302 0
+ERROR 2025-04-23 21:33:14,399 log 6108 10468 Internal Server Error: /admin/login/
+Traceback (most recent call last):
+  File "C:\Users\roshan.mishra_jadegl\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.13_qbz5n2kfra8p0\LocalCache\local-packages\Python313\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\roshan.mishra_jadegl\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.13_qbz5n2kfra8p0\LocalCache\local-packages\Python313\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\roshan.mishra_jadegl\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.13_qbz5n2kfra8p0\LocalCache\local-packages\Python313\site-packages\django\utils\decorators.py", line 48, in _wrapper
+    return bound_method(*args, **kwargs)
+  File "C:\Users\roshan.mishra_jadegl\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.13_qbz5n2kfra8p0\LocalCache\local-packages\Python313\site-packages\django\views\decorators\cache.py", line 80, in _view_wrapper
+    response = view_func(request, *args, **kwargs)
+  File "C:\Users\roshan.mishra_jadegl\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.13_qbz5n2kfra8p0\LocalCache\local-packages\Python313\site-packages\django\contrib\admin\sites.py", line 430, in login
+    **self.each_context(request),
+      ~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\roshan.mishra_jadegl\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.13_qbz5n2kfra8p0\LocalCache\local-packages\Python313\site-packages\django\contrib\admin\sites.py", line 343, in each_context
+    "available_apps": self.get_app_list(request),
+                      ~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\roshan.mishra_jadegl\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.13_qbz5n2kfra8p0\LocalCache\local-packages\Python313\site-packages\django\contrib\admin\sites.py", line 546, in get_app_list
+    app_dict = self._build_app_dict(request, app_label)
+  File "C:\Users\roshan.mishra_jadegl\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.13_qbz5n2kfra8p0\LocalCache\local-packages\Python313\site-packages\django\contrib\admin\sites.py", line 488, in _build_app_dict
+    has_module_perms = model_admin.has_module_permission(request)
+  File "C:\Users\roshan.mishra_jadegl\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.13_qbz5n2kfra8p0\LocalCache\local-packages\Python313\site-packages\django\contrib\admin\options.py", line 641, in has_module_permission
+    return request.user.has_module_perms(self.opts.app_label)
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\roshan.mishra_jadegl\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.13_qbz5n2kfra8p0\LocalCache\local-packages\Python313\site-packages\django\contrib\auth\models.py", line 620, in has_module_perms
+    return _user_has_module_perms(self, module)
+  File "C:\Users\roshan.mishra_jadegl\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.13_qbz5n2kfra8p0\LocalCache\local-packages\Python313\site-packages\django\contrib\auth\models.py", line 293, in _user_has_module_perms
+    for backend in auth.get_backends():
+                   ~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\roshan.mishra_jadegl\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.13_qbz5n2kfra8p0\LocalCache\local-packages\Python313\site-packages\django\contrib\auth\__init__.py", line 40, in get_backends
+    return _get_backends(return_tuples=False)
+  File "C:\Users\roshan.mishra_jadegl\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.13_qbz5n2kfra8p0\LocalCache\local-packages\Python313\site-packages\django\contrib\auth\__init__.py", line 29, in _get_backends
+    backend = load_backend(backend_path)
+  File "C:\Users\roshan.mishra_jadegl\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.13_qbz5n2kfra8p0\LocalCache\local-packages\Python313\site-packages\django\contrib\auth\__init__.py", line 23, in load_backend
+    return import_string(path)()
+           ~~~~~~~~~~~~~^^^^^^
+  File "C:\Users\roshan.mishra_jadegl\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.13_qbz5n2kfra8p0\LocalCache\local-packages\Python313\site-packages\django\utils\module_loading.py", line 30, in import_string
+    return cached_import(module_path, class_name)
+  File "C:\Users\roshan.mishra_jadegl\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.13_qbz5n2kfra8p0\LocalCache\local-packages\Python313\site-packages\django\utils\module_loading.py", line 15, in cached_import
+    module = import_module(module_path)
+  File "C:\Program Files\WindowsApps\PythonSoftwareFoundation.Python.3.13_3.13.1008.0_x64__qbz5n2kfra8p0\Lib\importlib\__init__.py", line 88, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+           ~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<frozen importlib._bootstrap>", line 1387, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 1360, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 1310, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 488, in _call_with_frames_removed
+  File "<frozen importlib._bootstrap>", line 1387, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 1360, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 1310, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 488, in _call_with_frames_removed
+  File "<frozen importlib._bootstrap>", line 1387, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 1360, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 1324, in _find_and_load_unlocked
+ModuleNotFoundError: No module named 'organization.authentication'
+ERROR 2025-04-23 21:33:14,456 basehttp 6108 10468 "GET /admin/login/?next=/admin/ HTTP/1.1" 500 152471
+INFO 2025-04-23 21:33:21,194 basehttp 6108 10468 "GET /admin/ HTTP/1.1" 302 0
+ERROR 2025-04-23 21:33:21,339 log 6108 10468 Internal Server Error: /admin/login/
+Traceback (most recent call last):
+  File "C:\Users\roshan.mishra_jadegl\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.13_qbz5n2kfra8p0\LocalCache\local-packages\Python313\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\roshan.mishra_jadegl\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.13_qbz5n2kfra8p0\LocalCache\local-packages\Python313\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\roshan.mishra_jadegl\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.13_qbz5n2kfra8p0\LocalCache\local-packages\Python313\site-packages\django\utils\decorators.py", line 48, in _wrapper
+    return bound_method(*args, **kwargs)
+  File "C:\Users\roshan.mishra_jadegl\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.13_qbz5n2kfra8p0\LocalCache\local-packages\Python313\site-packages\django\views\decorators\cache.py", line 80, in _view_wrapper
+    response = view_func(request, *args, **kwargs)
+  File "C:\Users\roshan.mishra_jadegl\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.13_qbz5n2kfra8p0\LocalCache\local-packages\Python313\site-packages\django\contrib\admin\sites.py", line 430, in login
+    **self.each_context(request),
+      ~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\roshan.mishra_jadegl\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.13_qbz5n2kfra8p0\LocalCache\local-packages\Python313\site-packages\django\contrib\admin\sites.py", line 343, in each_context
+    "available_apps": self.get_app_list(request),
+                      ~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\roshan.mishra_jadegl\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.13_qbz5n2kfra8p0\LocalCache\local-packages\Python313\site-packages\django\contrib\admin\sites.py", line 546, in get_app_list
+    app_dict = self._build_app_dict(request, app_label)
+  File "C:\Users\roshan.mishra_jadegl\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.13_qbz5n2kfra8p0\LocalCache\local-packages\Python313\site-packages\django\contrib\admin\sites.py", line 488, in _build_app_dict
+    has_module_perms = model_admin.has_module_permission(request)
+  File "C:\Users\roshan.mishra_jadegl\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.13_qbz5n2kfra8p0\LocalCache\local-packages\Python313\site-packages\django\contrib\admin\options.py", line 641, in has_module_permission
+    return request.user.has_module_perms(self.opts.app_label)
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\roshan.mishra_jadegl\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.13_qbz5n2kfra8p0\LocalCache\local-packages\Python313\site-packages\django\contrib\auth\models.py", line 620, in has_module_perms
+    return _user_has_module_perms(self, module)
+  File "C:\Users\roshan.mishra_jadegl\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.13_qbz5n2kfra8p0\LocalCache\local-packages\Python313\site-packages\django\contrib\auth\models.py", line 293, in _user_has_module_perms
+    for backend in auth.get_backends():
+                   ~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\roshan.mishra_jadegl\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.13_qbz5n2kfra8p0\LocalCache\local-packages\Python313\site-packages\django\contrib\auth\__init__.py", line 40, in get_backends
+    return _get_backends(return_tuples=False)
+  File "C:\Users\roshan.mishra_jadegl\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.13_qbz5n2kfra8p0\LocalCache\local-packages\Python313\site-packages\django\contrib\auth\__init__.py", line 29, in _get_backends
+    backend = load_backend(backend_path)
+  File "C:\Users\roshan.mishra_jadegl\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.13_qbz5n2kfra8p0\LocalCache\local-packages\Python313\site-packages\django\contrib\auth\__init__.py", line 23, in load_backend
+    return import_string(path)()
+           ~~~~~~~~~~~~~^^^^^^
+  File "C:\Users\roshan.mishra_jadegl\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.13_qbz5n2kfra8p0\LocalCache\local-packages\Python313\site-packages\django\utils\module_loading.py", line 30, in import_string
+    return cached_import(module_path, class_name)
+  File "C:\Users\roshan.mishra_jadegl\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.13_qbz5n2kfra8p0\LocalCache\local-packages\Python313\site-packages\django\utils\module_loading.py", line 15, in cached_import
+    module = import_module(module_path)
+  File "C:\Program Files\WindowsApps\PythonSoftwareFoundation.Python.3.13_3.13.1008.0_x64__qbz5n2kfra8p0\Lib\importlib\__init__.py", line 88, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+           ~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<frozen importlib._bootstrap>", line 1387, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 1360, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 1310, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 488, in _call_with_frames_removed
+  File "<frozen importlib._bootstrap>", line 1387, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 1360, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 1310, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 488, in _call_with_frames_removed
+  File "<frozen importlib._bootstrap>", line 1387, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 1360, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 1324, in _find_and_load_unlocked
+ModuleNotFoundError: No module named 'organization.authentication'
+ERROR 2025-04-23 21:33:21,385 basehttp 6108 10468 "GET /admin/login/?next=/admin/ HTTP/1.1" 500 152471
+WARNING 2025-04-23 21:34:06,905 log 6108 13100 Not Found: /
+WARNING 2025-04-23 21:34:06,908 basehttp 6108 13100 "GET / HTTP/1.1" 404 2454
+INFO 2025-04-23 21:34:14,580 basehttp 6108 15908 "GET /admin HTTP/1.1" 301 0
+INFO 2025-04-23 21:34:14,600 basehttp 6108 17872 "GET /admin/ HTTP/1.1" 302 0
+ERROR 2025-04-23 21:34:14,698 log 6108 17872 Internal Server Error: /admin/login/
+Traceback (most recent call last):
+  File "C:\Users\roshan.mishra_jadegl\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.13_qbz5n2kfra8p0\LocalCache\local-packages\Python313\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\roshan.mishra_jadegl\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.13_qbz5n2kfra8p0\LocalCache\local-packages\Python313\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\roshan.mishra_jadegl\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.13_qbz5n2kfra8p0\LocalCache\local-packages\Python313\site-packages\django\utils\decorators.py", line 48, in _wrapper
+    return bound_method(*args, **kwargs)
+  File "C:\Users\roshan.mishra_jadegl\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.13_qbz5n2kfra8p0\LocalCache\local-packages\Python313\site-packages\django\views\decorators\cache.py", line 80, in _view_wrapper
+    response = view_func(request, *args, **kwargs)
+  File "C:\Users\roshan.mishra_jadegl\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.13_qbz5n2kfra8p0\LocalCache\local-packages\Python313\site-packages\django\contrib\admin\sites.py", line 430, in login
+    **self.each_context(request),
+      ~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\roshan.mishra_jadegl\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.13_qbz5n2kfra8p0\LocalCache\local-packages\Python313\site-packages\django\contrib\admin\sites.py", line 343, in each_context
+    "available_apps": self.get_app_list(request),
+                      ~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\roshan.mishra_jadegl\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.13_qbz5n2kfra8p0\LocalCache\local-packages\Python313\site-packages\django\contrib\admin\sites.py", line 546, in get_app_list
+    app_dict = self._build_app_dict(request, app_label)
+  File "C:\Users\roshan.mishra_jadegl\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.13_qbz5n2kfra8p0\LocalCache\local-packages\Python313\site-packages\django\contrib\admin\sites.py", line 488, in _build_app_dict
+    has_module_perms = model_admin.has_module_permission(request)
+  File "C:\Users\roshan.mishra_jadegl\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.13_qbz5n2kfra8p0\LocalCache\local-packages\Python313\site-packages\django\contrib\admin\options.py", line 641, in has_module_permission
+    return request.user.has_module_perms(self.opts.app_label)
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\roshan.mishra_jadegl\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.13_qbz5n2kfra8p0\LocalCache\local-packages\Python313\site-packages\django\contrib\auth\models.py", line 620, in has_module_perms
+    return _user_has_module_perms(self, module)
+  File "C:\Users\roshan.mishra_jadegl\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.13_qbz5n2kfra8p0\LocalCache\local-packages\Python313\site-packages\django\contrib\auth\models.py", line 293, in _user_has_module_perms
+    for backend in auth.get_backends():
+                   ~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\roshan.mishra_jadegl\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.13_qbz5n2kfra8p0\LocalCache\local-packages\Python313\site-packages\django\contrib\auth\__init__.py", line 40, in get_backends
+    return _get_backends(return_tuples=False)
+  File "C:\Users\roshan.mishra_jadegl\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.13_qbz5n2kfra8p0\LocalCache\local-packages\Python313\site-packages\django\contrib\auth\__init__.py", line 29, in _get_backends
+    backend = load_backend(backend_path)
+  File "C:\Users\roshan.mishra_jadegl\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.13_qbz5n2kfra8p0\LocalCache\local-packages\Python313\site-packages\django\contrib\auth\__init__.py", line 23, in load_backend
+    return import_string(path)()
+           ~~~~~~~~~~~~~^^^^^^
+  File "C:\Users\roshan.mishra_jadegl\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.13_qbz5n2kfra8p0\LocalCache\local-packages\Python313\site-packages\django\utils\module_loading.py", line 30, in import_string
+    return cached_import(module_path, class_name)
+  File "C:\Users\roshan.mishra_jadegl\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.13_qbz5n2kfra8p0\LocalCache\local-packages\Python313\site-packages\django\utils\module_loading.py", line 15, in cached_import
+    module = import_module(module_path)
+  File "C:\Program Files\WindowsApps\PythonSoftwareFoundation.Python.3.13_3.13.1008.0_x64__qbz5n2kfra8p0\Lib\importlib\__init__.py", line 88, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+           ~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<frozen importlib._bootstrap>", line 1387, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 1360, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 1310, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 488, in _call_with_frames_removed
+  File "<frozen importlib._bootstrap>", line 1387, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 1360, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 1310, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 488, in _call_with_frames_removed
+  File "<frozen importlib._bootstrap>", line 1387, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 1360, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 1324, in _find_and_load_unlocked
+ModuleNotFoundError: No module named 'organization.authentication'
+ERROR 2025-04-23 21:34:14,721 basehttp 6108 17872 "GET /admin/login/?next=/admin/ HTTP/1.1" 500 152456
+INFO 2025-04-23 21:34:27,820 basehttp 6108 17872 "GET /admin/ HTTP/1.1" 302 0
+ERROR 2025-04-23 21:34:27,913 log 6108 17872 Internal Server Error: /admin/login/
+Traceback (most recent call last):
+  File "C:\Users\roshan.mishra_jadegl\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.13_qbz5n2kfra8p0\LocalCache\local-packages\Python313\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\roshan.mishra_jadegl\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.13_qbz5n2kfra8p0\LocalCache\local-packages\Python313\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\roshan.mishra_jadegl\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.13_qbz5n2kfra8p0\LocalCache\local-packages\Python313\site-packages\django\utils\decorators.py", line 48, in _wrapper
+    return bound_method(*args, **kwargs)
+  File "C:\Users\roshan.mishra_jadegl\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.13_qbz5n2kfra8p0\LocalCache\local-packages\Python313\site-packages\django\views\decorators\cache.py", line 80, in _view_wrapper
+    response = view_func(request, *args, **kwargs)
+  File "C:\Users\roshan.mishra_jadegl\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.13_qbz5n2kfra8p0\LocalCache\local-packages\Python313\site-packages\django\contrib\admin\sites.py", line 430, in login
+    **self.each_context(request),
+      ~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\roshan.mishra_jadegl\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.13_qbz5n2kfra8p0\LocalCache\local-packages\Python313\site-packages\django\contrib\admin\sites.py", line 343, in each_context
+    "available_apps": self.get_app_list(request),
+                      ~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\roshan.mishra_jadegl\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.13_qbz5n2kfra8p0\LocalCache\local-packages\Python313\site-packages\django\contrib\admin\sites.py", line 546, in get_app_list
+    app_dict = self._build_app_dict(request, app_label)
+  File "C:\Users\roshan.mishra_jadegl\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.13_qbz5n2kfra8p0\LocalCache\local-packages\Python313\site-packages\django\contrib\admin\sites.py", line 488, in _build_app_dict
+    has_module_perms = model_admin.has_module_permission(request)
+  File "C:\Users\roshan.mishra_jadegl\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.13_qbz5n2kfra8p0\LocalCache\local-packages\Python313\site-packages\django\contrib\admin\options.py", line 641, in has_module_permission
+    return request.user.has_module_perms(self.opts.app_label)
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\roshan.mishra_jadegl\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.13_qbz5n2kfra8p0\LocalCache\local-packages\Python313\site-packages\django\contrib\auth\models.py", line 620, in has_module_perms
+    return _user_has_module_perms(self, module)
+  File "C:\Users\roshan.mishra_jadegl\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.13_qbz5n2kfra8p0\LocalCache\local-packages\Python313\site-packages\django\contrib\auth\models.py", line 293, in _user_has_module_perms
+    for backend in auth.get_backends():
+                   ~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\roshan.mishra_jadegl\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.13_qbz5n2kfra8p0\LocalCache\local-packages\Python313\site-packages\django\contrib\auth\__init__.py", line 40, in get_backends
+    return _get_backends(return_tuples=False)
+  File "C:\Users\roshan.mishra_jadegl\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.13_qbz5n2kfra8p0\LocalCache\local-packages\Python313\site-packages\django\contrib\auth\__init__.py", line 29, in _get_backends
+    backend = load_backend(backend_path)
+  File "C:\Users\roshan.mishra_jadegl\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.13_qbz5n2kfra8p0\LocalCache\local-packages\Python313\site-packages\django\contrib\auth\__init__.py", line 23, in load_backend
+    return import_string(path)()
+           ~~~~~~~~~~~~~^^^^^^
+  File "C:\Users\roshan.mishra_jadegl\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.13_qbz5n2kfra8p0\LocalCache\local-packages\Python313\site-packages\django\utils\module_loading.py", line 30, in import_string
+    return cached_import(module_path, class_name)
+  File "C:\Users\roshan.mishra_jadegl\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.13_qbz5n2kfra8p0\LocalCache\local-packages\Python313\site-packages\django\utils\module_loading.py", line 15, in cached_import
+    module = import_module(module_path)
+  File "C:\Program Files\WindowsApps\PythonSoftwareFoundation.Python.3.13_3.13.1008.0_x64__qbz5n2kfra8p0\Lib\importlib\__init__.py", line 88, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+           ~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<frozen importlib._bootstrap>", line 1387, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 1360, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 1310, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 488, in _call_with_frames_removed
+  File "<frozen importlib._bootstrap>", line 1387, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 1360, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 1310, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 488, in _call_with_frames_removed
+  File "<frozen importlib._bootstrap>", line 1387, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 1360, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 1324, in _find_and_load_unlocked
+ModuleNotFoundError: No module named 'organization.authentication'
+ERROR 2025-04-23 21:34:27,946 basehttp 6108 17872 "GET /admin/login/?next=/admin/ HTTP/1.1" 500 152456
+INFO 2025-04-23 21:38:40,564 autoreload 6108 2168 C:\Users\roshan.mishra_jadegl\Documents\Project\backend\backend\settings.py changed, reloading.
+INFO 2025-04-23 21:38:41,831 autoreload 12668 1232 Watching for file changes with StatReloader
+INFO 2025-04-23 21:38:55,151 basehttp 12668 16136 "GET /admin/ HTTP/1.1" 302 0
+INFO 2025-04-23 21:38:55,285 basehttp 12668 16136 "GET /admin/login/?next=/admin/ HTTP/1.1" 200 4184
+INFO 2025-04-23 21:38:56,091 basehttp 12668 16780 "GET /static/admin/css/login.css HTTP/1.1" 200 951
+INFO 2025-04-23 21:38:56,131 basehttp 12668 13616 "GET /static/admin/css/dark_mode.css HTTP/1.1" 200 2808
+INFO 2025-04-23 21:38:56,160 basehttp 12668 14924 "GET /static/admin/css/nav_sidebar.css HTTP/1.1" 200 2810
+INFO 2025-04-23 21:38:56,194 basehttp 12668 16136 "GET /static/admin/css/base.css HTTP/1.1" 200 22154
+INFO 2025-04-23 21:38:56,211 basehttp 12668 3468 "GET /static/admin/css/responsive.css HTTP/1.1" 200 16632
+INFO 2025-04-23 21:38:56,216 basehttp 12668 2860 "GET /static/admin/js/theme.js HTTP/1.1" 200 1653
+INFO 2025-04-23 21:38:56,221 basehttp 12668 3468 "GET /static/admin/js/nav_sidebar.js HTTP/1.1" 200 3063
+INFO 2025-04-23 21:39:21,279 basehttp 12668 3468 "POST /admin/login/?next=/admin/ HTTP/1.1" 200 4352
+INFO 2025-04-23 21:39:37,799 basehttp 12668 3468 "POST /admin/login/?next=/admin/ HTTP/1.1" 200 4353
+INFO 2025-04-23 21:39:56,625 basehttp 12668 3468 "POST /admin/login/?next=/admin/ HTTP/1.1" 200 4352
+INFO 2025-04-23 21:47:16,024 autoreload 13084 17680 Watching for file changes with StatReloader
+INFO 2025-04-23 21:47:29,992 basehttp 13084 16708 "POST /admin/login/?next=/admin/ HTTP/1.1" 302 0
+INFO 2025-04-23 21:47:30,118 basehttp 13084 16708 "GET /admin/ HTTP/1.1" 200 6111
+INFO 2025-04-23 21:47:30,400 basehttp 13084 16708 "GET /static/admin/css/dashboard.css HTTP/1.1" 200 441
+INFO 2025-04-23 21:47:30,415 basehttp 13084 16708 "GET /static/admin/img/icon-addlink.svg HTTP/1.1" 200 331
+INFO 2025-04-23 21:47:30,420 basehttp 13084 16916 "GET /static/admin/img/icon-changelink.svg HTTP/1.1" 200 380
+INFO 2025-04-23 21:47:37,178 basehttp 13084 16916 "GET /admin/auth/group/ HTTP/1.1" 200 7696
+INFO 2025-04-23 21:47:37,204 basehttp 13084 16916 "GET /static/admin/css/changelists.css HTTP/1.1" 200 6878
+INFO 2025-04-23 21:47:37,221 basehttp 13084 17200 "GET /static/admin/js/jquery.init.js HTTP/1.1" 200 347
+INFO 2025-04-23 21:47:37,222 basehttp 13084 12924 "GET /static/admin/js/actions.js HTTP/1.1" 200 8076
+INFO 2025-04-23 21:47:37,222 basehttp 13084 16028 "GET /static/admin/js/core.js HTTP/1.1" 200 6208
+INFO 2025-04-23 21:47:37,223 basehttp 13084 7656 "GET /static/admin/js/admin/RelatedObjectLookups.js HTTP/1.1" 200 9777
+INFO 2025-04-23 21:47:37,231 basehttp 13084 16916 "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-04-23 21:47:37,231 basehttp 13084 17200 "GET /static/admin/js/urlify.js HTTP/1.1" 200 7887
+INFO 2025-04-23 21:47:37,234 basehttp 13084 7656 "GET /static/admin/js/prepopulate.js HTTP/1.1" 200 1531
+INFO 2025-04-23 21:47:37,235 basehttp 13084 16708 "GET /static/admin/js/vendor/jquery/jquery.js HTTP/1.1" 200 285314
+INFO 2025-04-23 21:47:37,237 basehttp 13084 12924 "GET /static/admin/js/vendor/xregexp/xregexp.js HTTP/1.1" 200 325171
+INFO 2025-04-23 21:47:37,248 basehttp 13084 16708 "GET /static/admin/img/search.svg HTTP/1.1" 200 458
+INFO 2025-04-23 21:47:37,268 basehttp 13084 16708 "GET /static/admin/js/filters.js HTTP/1.1" 200 978
+INFO 2025-04-23 21:47:37,292 basehttp 13084 16708 "GET /static/admin/img/tooltag-add.svg HTTP/1.1" 200 331
+INFO 2025-04-23 21:47:39,407 basehttp 13084 16708 "GET /admin/auth/user/ HTTP/1.1" 200 11294
+INFO 2025-04-23 21:47:39,436 basehttp 13084 12924 "GET /static/admin/img/icon-yes.svg HTTP/1.1" 200 436
+INFO 2025-04-23 21:47:39,443 basehttp 13084 16708 "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-04-23 21:47:39,469 basehttp 13084 16708 "GET /static/admin/img/sorting-icons.svg HTTP/1.1" 200 1097
+INFO 2025-04-23 21:47:39,470 basehttp 13084 12924 "GET /static/admin/img/icon-viewlink.svg HTTP/1.1" 200 581
+WARNING 2025-04-23 21:48:16,931 log 13084 8152 Bad Request: /org/auth/register/
+WARNING 2025-04-23 21:48:16,933 basehttp 13084 8152 "POST /org/auth/register/ HTTP/1.1" 400 80
+INFO 2025-04-23 21:50:59,204 basehttp 13084 8152 "POST /org/auth/register/ HTTP/1.1" 201 42
+INFO 2025-04-23 21:51:23,419 basehttp 13084 8152 "OPTIONS /org/auth/login/ HTTP/1.1" 200 0
+WARNING 2025-04-23 21:51:25,911 log 13084 8152 Bad Request: /org/auth/login/
+WARNING 2025-04-23 21:51:25,912 basehttp 13084 8152 "POST /org/auth/login/ HTTP/1.1" 400 32
+INFO 2025-04-23 21:53:32,207 autoreload 13084 17680 C:\Users\roshan.mishra_jadegl\Documents\Project\backend\organization\views.py changed, reloading.
+INFO 2025-04-23 21:53:33,246 autoreload 17172 10464 Watching for file changes with StatReloader
+WARNING 2025-04-23 21:53:38,424 log 17172 17732 Bad Request: /org/auth/login/
+WARNING 2025-04-23 21:53:38,425 basehttp 17172 17732 "POST /org/auth/login/ HTTP/1.1" 400 32
+INFO 2025-04-23 21:54:27,643 basehttp 17172 17732 "OPTIONS /org/auth/register/ HTTP/1.1" 200 0
+INFO 2025-04-23 21:54:30,357 basehttp 17172 17732 "POST /org/auth/register/ HTTP/1.1" 201 42
+ERROR 2025-04-23 21:54:32,999 log 17172 3472 Internal Server Error: /org/auth/register/
+Traceback (most recent call last):
+  File "C:\Users\roshan.mishra_jadegl\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.13_qbz5n2kfra8p0\LocalCache\local-packages\Python313\site-packages\django\db\backends\utils.py", line 105, in _execute
+    return self.cursor.execute(sql, params)
+           ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^
+  File "C:\Users\roshan.mishra_jadegl\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.13_qbz5n2kfra8p0\LocalCache\local-packages\Python313\site-packages\django\db\backends\mysql\base.py", line 76, in execute
+    return self.cursor.execute(query, args)
+           ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^
+  File "C:\Users\roshan.mishra_jadegl\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.13_qbz5n2kfra8p0\LocalCache\local-packages\Python313\site-packages\MySQLdb\cursors.py", line 179, in execute
+    res = self._query(mogrified_query)
+  File "C:\Users\roshan.mishra_jadegl\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.13_qbz5n2kfra8p0\LocalCache\local-packages\Python313\site-packages\MySQLdb\cursors.py", line 330, in _query
+    db.query(q)
+    ~~~~~~~~^^^
+  File "C:\Users\roshan.mishra_jadegl\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.13_qbz5n2kfra8p0\LocalCache\local-packages\Python313\site-packages\MySQLdb\connections.py", line 280, in query
+    _mysql.connection.query(self, query)
+    ~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^
+MySQLdb.IntegrityError: (1062, "Duplicate entry 'roshanmishra207@gmail.com' for key 'organization_organization.email'")
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\roshan.mishra_jadegl\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.13_qbz5n2kfra8p0\LocalCache\local-packages\Python313\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\roshan.mishra_jadegl\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.13_qbz5n2kfra8p0\LocalCache\local-packages\Python313\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\roshan.mishra_jadegl\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.13_qbz5n2kfra8p0\LocalCache\local-packages\Python313\site-packages\django\views\decorators\csrf.py", line 65, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+  File "C:\Users\roshan.mishra_jadegl\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.13_qbz5n2kfra8p0\LocalCache\local-packages\Python313\site-packages\django\views\generic\base.py", line 104, in view
+    return self.dispatch(request, *args, **kwargs)
+           ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\roshan.mishra_jadegl\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.13_qbz5n2kfra8p0\LocalCache\local-packages\Python313\site-packages\rest_framework\views.py", line 515, in dispatch
+    response = self.handle_exception(exc)
+  File "C:\Users\roshan.mishra_jadegl\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.13_qbz5n2kfra8p0\LocalCache\local-packages\Python313\site-packages\rest_framework\views.py", line 475, in handle_exception
+    self.raise_uncaught_exception(exc)
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^
+  File "C:\Users\roshan.mishra_jadegl\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.13_qbz5n2kfra8p0\LocalCache\local-packages\Python313\site-packages\rest_framework\views.py", line 486, in raise_uncaught_exception
+    raise exc
+  File "C:\Users\roshan.mishra_jadegl\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.13_qbz5n2kfra8p0\LocalCache\local-packages\Python313\site-packages\rest_framework\views.py", line 512, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "C:\Users\roshan.mishra_jadegl\Documents\Project\backend\organization\views.py", line 17, in post
+    serializer.save()
+    ~~~~~~~~~~~~~~~^^
+  File "C:\Users\roshan.mishra_jadegl\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.13_qbz5n2kfra8p0\LocalCache\local-packages\Python313\site-packages\rest_framework\serializers.py", line 210, in save
+    self.instance = self.create(validated_data)
+                    ~~~~~~~~~~~^^^^^^^^^^^^^^^^
+  File "C:\Users\roshan.mishra_jadegl\Documents\Project\backend\organization\serializers.py", line 12, in create
+    return Organization.objects.create_user(**validated_data)
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^
+  File "C:\Users\roshan.mishra_jadegl\Documents\Project\backend\organization\models.py", line 12, in create_user
+    org.save(using=self._db)
+    ~~~~~~~~^^^^^^^^^^^^^^^^
+  File "C:\Users\roshan.mishra_jadegl\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.13_qbz5n2kfra8p0\LocalCache\local-packages\Python313\site-packages\django\contrib\auth\base_user.py", line 65, in save
+    super().save(*args, **kwargs)
+    ~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "C:\Users\roshan.mishra_jadegl\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.13_qbz5n2kfra8p0\LocalCache\local-packages\Python313\site-packages\django\db\models\base.py", line 902, in save
+    self.save_base(
+    ~~~~~~~~~~~~~~^
+        using=using,
+        ^^^^^^^^^^^^
+    ...<2 lines>...
+        update_fields=update_fields,
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Users\roshan.mishra_jadegl\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.13_qbz5n2kfra8p0\LocalCache\local-packages\Python313\site-packages\django\db\models\base.py", line 1008, in save_base
+    updated = self._save_table(
+        raw,
+    ...<4 lines>...
+        update_fields,
+    )
+  File "C:\Users\roshan.mishra_jadegl\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.13_qbz5n2kfra8p0\LocalCache\local-packages\Python313\site-packages\django\db\models\base.py", line 1169, in _save_table
+    results = self._do_insert(
+        cls._base_manager, using, fields, returning_fields, raw
+    )
+  File "C:\Users\roshan.mishra_jadegl\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.13_qbz5n2kfra8p0\LocalCache\local-packages\Python313\site-packages\django\db\models\base.py", line 1210, in _do_insert
+    return manager._insert(
+           ~~~~~~~~~~~~~~~^
+        [self],
+        ^^^^^^^
+    ...<3 lines>...
+        raw=raw,
+        ^^^^^^^^
+    )
+    ^
+  File "C:\Users\roshan.mishra_jadegl\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.13_qbz5n2kfra8p0\LocalCache\local-packages\Python313\site-packages\django\db\models\manager.py", line 87, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "C:\Users\roshan.mishra_jadegl\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.13_qbz5n2kfra8p0\LocalCache\local-packages\Python313\site-packages\django\db\models\query.py", line 1854, in _insert
+    return query.get_compiler(using=using).execute_sql(returning_fields)
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^
+  File "C:\Users\roshan.mishra_jadegl\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.13_qbz5n2kfra8p0\LocalCache\local-packages\Python313\site-packages\django\db\models\sql\compiler.py", line 1881, in execute_sql
+    cursor.execute(sql, params)
+    ~~~~~~~~~~~~~~^^^^^^^^^^^^^
+  File "C:\Users\roshan.mishra_jadegl\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.13_qbz5n2kfra8p0\LocalCache\local-packages\Python313\site-packages\django\db\backends\utils.py", line 122, in execute
+    return super().execute(sql, params)
+           ~~~~~~~~~~~~~~~^^^^^^^^^^^^^
+  File "C:\Users\roshan.mishra_jadegl\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.13_qbz5n2kfra8p0\LocalCache\local-packages\Python313\site-packages\django\db\backends\utils.py", line 79, in execute
+    return self._execute_with_wrappers(
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~^
+        sql, params, many=False, executor=self._execute
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Users\roshan.mishra_jadegl\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.13_qbz5n2kfra8p0\LocalCache\local-packages\Python313\site-packages\django\db\backends\utils.py", line 92, in _execute_with_wrappers
+    return executor(sql, params, many, context)
+  File "C:\Users\roshan.mishra_jadegl\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.13_qbz5n2kfra8p0\LocalCache\local-packages\Python313\site-packages\django\db\backends\utils.py", line 100, in _execute
+    with self.db.wrap_database_errors:
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\roshan.mishra_jadegl\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.13_qbz5n2kfra8p0\LocalCache\local-packages\Python313\site-packages\django\db\utils.py", line 91, in __exit__
+    raise dj_exc_value.with_traceback(traceback) from exc_value
+  File "C:\Users\roshan.mishra_jadegl\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.13_qbz5n2kfra8p0\LocalCache\local-packages\Python313\site-packages\django\db\backends\utils.py", line 105, in _execute
+    return self.cursor.execute(sql, params)
+           ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^
+  File "C:\Users\roshan.mishra_jadegl\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.13_qbz5n2kfra8p0\LocalCache\local-packages\Python313\site-packages\django\db\backends\mysql\base.py", line 76, in execute
+    return self.cursor.execute(query, args)
+           ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^
+  File "C:\Users\roshan.mishra_jadegl\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.13_qbz5n2kfra8p0\LocalCache\local-packages\Python313\site-packages\MySQLdb\cursors.py", line 179, in execute
+    res = self._query(mogrified_query)
+  File "C:\Users\roshan.mishra_jadegl\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.13_qbz5n2kfra8p0\LocalCache\local-packages\Python313\site-packages\MySQLdb\cursors.py", line 330, in _query
+    db.query(q)
+    ~~~~~~~~^^^
+  File "C:\Users\roshan.mishra_jadegl\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.13_qbz5n2kfra8p0\LocalCache\local-packages\Python313\site-packages\MySQLdb\connections.py", line 280, in query
+    _mysql.connection.query(self, query)
+    ~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^
+django.db.utils.IntegrityError: (1062, "Duplicate entry 'roshanmishra207@gmail.com' for key 'organization_organization.email'")
+ERROR 2025-04-23 21:54:33,073 basehttp 17172 3472 "POST /org/auth/register/ HTTP/1.1" 500 228145
+WARNING 2025-04-23 21:54:45,968 log 17172 3472 Bad Request: /org/auth/login/
+WARNING 2025-04-23 21:54:45,969 basehttp 17172 3472 "POST /org/auth/login/ HTTP/1.1" 400 32
+INFO 2025-04-23 22:03:00,990 autoreload 17172 10464 C:\Users\roshan.mishra_jadegl\Documents\Project\backend\backend\settings.py changed, reloading.
+INFO 2025-04-23 22:03:03,059 autoreload 17616 12276 Watching for file changes with StatReloader
+WARNING 2025-04-23 22:03:14,432 log 17616 13696 Bad Request: /org/auth/login/
+WARNING 2025-04-23 22:03:14,434 basehttp 17616 13696 "POST /org/auth/login/ HTTP/1.1" 400 32
+WARNING 2025-04-23 22:03:48,255 log 17616 13696 Bad Request: /org/auth/login/
+WARNING 2025-04-23 22:03:48,257 basehttp 17616 13696 "POST /org/auth/login/ HTTP/1.1" 400 32
+INFO 2025-04-23 22:05:02,399 autoreload 17616 12276 C:\Users\roshan.mishra_jadegl\Documents\Project\backend\organization\views.py changed, reloading.
+INFO 2025-04-23 22:05:04,903 autoreload 3240 18040 Watching for file changes with StatReloader
+INFO 2025-04-23 22:05:13,760 basehttp 3240 5660 "POST /org/auth/login/ HTTP/1.1" 200 483
+INFO 2025-04-23 22:05:15,567 basehttp 3240 17900 "POST /org/auth/login/ HTTP/1.1" 200 483
+INFO 2025-04-23 22:05:46,589 basehttp 3240 17900 "POST /org/auth/login/ HTTP/1.1" 200 483
+WARNING 2025-04-23 22:06:05,381 log 3240 17900 Bad Request: /org/auth/register/
+WARNING 2025-04-23 22:06:05,383 basehttp 3240 17900 "POST /org/auth/register/ HTTP/1.1" 400 74
+INFO 2025-04-23 22:06:28,777 basehttp 3240 17900 "POST /org/auth/register/ HTTP/1.1" 201 42
+INFO 2025-04-23 22:16:19,642 autoreload 3240 18040 C:\Users\roshan.mishra_jadegl\Documents\Project\backend\users\urls.py changed, reloading.
+INFO 2025-04-23 22:16:20,579 autoreload 10040 10472 Watching for file changes with StatReloader
+INFO 2025-04-23 22:33:47,904 basehttp 10040 8120 "OPTIONS /user-register HTTP/1.1" 200 0
+WARNING 2025-04-23 22:33:47,925 log 10040 8120 Not Found: /user-register
+WARNING 2025-04-23 22:33:47,927 basehttp 10040 8120 "POST /user-register HTTP/1.1" 404 2512
+INFO 2025-04-23 22:34:49,567 autoreload 10040 10472 C:\Users\roshan.mishra_jadegl\Documents\Project\backend\backend\urls.py changed, reloading.
+INFO 2025-04-23 22:34:50,414 autoreload 9328 15600 Watching for file changes with StatReloader
+INFO 2025-04-23 22:35:29,663 autoreload 9328 15600 C:\Users\roshan.mishra_jadegl\Documents\Project\backend\backend\urls.py changed, reloading.
+INFO 2025-04-23 22:35:30,517 autoreload 12248 18148 Watching for file changes with StatReloader
+INFO 2025-04-23 22:35:44,767 basehttp 12248 3212 "OPTIONS /user/user-register HTTP/1.1" 200 0
+WARNING 2025-04-23 22:35:44,778 log 12248 3212 Not Found: /user/user-register
+WARNING 2025-04-23 22:35:44,780 basehttp 12248 3212 "POST /user/user-register HTTP/1.1" 404 2532
+INFO 2025-04-23 22:36:28,534 autoreload 12248 18148 C:\Users\roshan.mishra_jadegl\Documents\Project\backend\users\urls.py changed, reloading.
+INFO 2025-04-23 22:36:29,435 autoreload 15460 18248 Watching for file changes with StatReloader
+WARNING 2025-04-23 22:36:32,636 log 15460 17380 Not Found: /user/user-register
+WARNING 2025-04-23 22:36:32,637 basehttp 15460 17380 "POST /user/user-register HTTP/1.1" 404 2532
+INFO 2025-04-23 22:37:15,732 basehttp 15460 17380 "OPTIONS /user/user-login HTTP/1.1" 200 0
+WARNING 2025-04-23 22:37:15,748 log 15460 17380 Not Found: /user/user-login
+WARNING 2025-04-23 22:37:15,749 basehttp 15460 17380 "POST /user/user-login HTTP/1.1" 404 2523
+INFO 2025-04-23 22:37:50,968 autoreload 15460 18248 C:\Users\roshan.mishra_jadegl\Documents\Project\backend\users\urls.py changed, reloading.
+INFO 2025-04-23 22:37:51,932 autoreload 17776 17200 Watching for file changes with StatReloader
+WARNING 2025-04-23 22:37:56,070 log 17776 9376 Not Found: /user/user-login
+WARNING 2025-04-23 22:37:56,071 basehttp 17776 9376 "POST /user/user-login HTTP/1.1" 404 2523
+INFO 2025-04-23 22:39:08,523 autoreload 17776 17200 C:\Users\roshan.mishra_jadegl\Documents\Project\backend\backend\urls.py changed, reloading.
+INFO 2025-04-23 22:39:09,475 autoreload 8264 13552 Watching for file changes with StatReloader
+WARNING 2025-04-23 22:39:11,533 log 8264 144 Not Found: /user/user-login
+WARNING 2025-04-23 22:39:11,535 basehttp 8264 144 "POST /user/user-login HTTP/1.1" 404 2911
+WARNING 2025-04-23 22:45:15,349 log 8264 18172 Not Found: /user/user-login
+WARNING 2025-04-23 22:45:15,351 basehttp 8264 18172 "POST /user/user-login HTTP/1.1" 404 2911
+INFO 2025-04-23 22:46:47,438 autoreload 8264 13552 C:\Users\roshan.mishra_jadegl\Documents\Project\backend\backend\urls.py changed, reloading.
+INFO 2025-04-23 22:46:48,380 autoreload 16928 15736 Watching for file changes with StatReloader
+WARNING 2025-04-23 22:46:53,969 log 16928 14872 Not Found: /user/user-login
+WARNING 2025-04-23 22:46:53,970 basehttp 16928 14872 "POST /user/user-login HTTP/1.1" 404 2911
+WARNING 2025-04-23 22:47:18,732 log 16928 14872 Not Found: /user/user-register
+WARNING 2025-04-23 22:47:18,733 basehttp 16928 14872 "POST /user/user-register HTTP/1.1" 404 2920
+INFO 2025-04-23 22:50:06,885 autoreload 3160 8752 Watching for file changes with StatReloader
+WARNING 2025-04-23 22:51:26,256 log 3160 6996 Not Found: /user/user-login
+WARNING 2025-04-23 22:51:26,257 basehttp 3160 6996 "POST /user/user-login HTTP/1.1" 404 2911
+WARNING 2025-04-23 22:53:00,761 log 3160 6996 Not Found: /user/user-login
+WARNING 2025-04-23 22:53:00,763 basehttp 3160 6996 "POST /user/user-login HTTP/1.1" 404 2911
+WARNING 2025-04-23 22:54:23,587 log 3160 15572 Not Found: /user/user-login
+WARNING 2025-04-23 22:54:23,588 basehttp 3160 15572 "POST /user/user-login HTTP/1.1" 404 2911
+INFO 2025-04-23 22:55:27,214 basehttp 3160 15572 "OPTIONS /user/user-login/ HTTP/1.1" 200 0
+WARNING 2025-04-23 22:55:27,223 log 3160 15572 Not Found: /user/user-login/
+WARNING 2025-04-23 22:55:27,225 basehttp 3160 15572 "POST /user/user-login/ HTTP/1.1" 404 2914
+INFO 2025-04-24 09:40:52,579 autoreload 16984 11672 Watching for file changes with StatReloader
+INFO 2025-04-24 09:42:09,328 basehttp 16984 8708 "OPTIONS /user/user-register/ HTTP/1.1" 200 0
+WARNING 2025-04-24 09:42:09,352 log 16984 8708 Not Found: /user/user-register/
+WARNING 2025-04-24 09:42:09,353 basehttp 16984 8708 "POST /user/user-register/ HTTP/1.1" 404 2923
+WARNING 2025-04-24 09:43:25,892 log 16984 7352 Not Found: /user/user-register/
+WARNING 2025-04-24 09:43:25,893 basehttp 16984 7352 "POST /user/user-register/ HTTP/1.1" 404 2923
+WARNING 2025-04-24 09:48:57,563 log 16984 18008 Not Found: /user/user-register/
+WARNING 2025-04-24 09:48:57,564 basehttp 16984 18008 "POST /user/user-register/ HTTP/1.1" 404 2923
+INFO 2025-04-24 09:50:04,706 basehttp 16984 18144 "OPTIONS /org/auth/login/ HTTP/1.1" 200 0
+INFO 2025-04-24 09:50:07,176 basehttp 16984 18144 "POST /org/auth/login/ HTTP/1.1" 200 483
+INFO 2025-04-24 09:54:56,492 autoreload 16984 11672 C:\Users\roshan.mishra_jadegl\Documents\Project\backend\organization\urls.py changed, reloading.
+INFO 2025-04-24 09:54:58,328 autoreload 9036 16332 Watching for file changes with StatReloader
+INFO 2025-04-24 09:55:02,829 autoreload 9036 16332 C:\Users\roshan.mishra_jadegl\Documents\Project\backend\organization\models.py changed, reloading.
+INFO 2025-04-24 09:55:04,031 autoreload 17556 16416 Watching for file changes with StatReloader
+INFO 2025-04-24 09:55:08,250 autoreload 17556 16416 C:\Users\roshan.mishra_jadegl\Documents\Project\backend\users\urls.py changed, reloading.
+INFO 2025-04-24 09:55:09,895 autoreload 17904 15916 Watching for file changes with StatReloader
+INFO 2025-04-24 09:55:17,989 autoreload 17904 15916 C:\Users\roshan.mishra_jadegl\Documents\Project\backend\users\views.py changed, reloading.
+INFO 2025-04-24 09:55:19,122 autoreload 7844 14304 Watching for file changes with StatReloader
+INFO 2025-04-24 10:00:33,700 autoreload 7844 14304 C:\Users\roshan.mishra_jadegl\Documents\Project\backend\users\urls.py changed, reloading.
+INFO 2025-04-24 10:00:34,743 autoreload 17940 17424 Watching for file changes with StatReloader
+INFO 2025-04-24 10:10:35,109 autoreload 1116 4548 Watching for file changes with StatReloader
+ERROR 2025-04-24 10:10:39,271 log 1116 7224 Internal Server Error: /user/user-login
+Traceback (most recent call last):
+  File "C:\Users\roshan.mishra_jadegl\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.13_qbz5n2kfra8p0\LocalCache\local-packages\Python313\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\roshan.mishra_jadegl\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.13_qbz5n2kfra8p0\LocalCache\local-packages\Python313\site-packages\django\utils\deprecation.py", line 122, in __call__
+    response = self.process_response(request, response)
+  File "C:\Users\roshan.mishra_jadegl\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.13_qbz5n2kfra8p0\LocalCache\local-packages\Python313\site-packages\django\middleware\common.py", line 108, in process_response
+    return self.response_redirect_class(self.get_full_path_with_slash(request))
+                                        ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\roshan.mishra_jadegl\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.13_qbz5n2kfra8p0\LocalCache\local-packages\Python313\site-packages\django\middleware\common.py", line 87, in get_full_path_with_slash
+    raise RuntimeError(
+    ...<9 lines>...
+    )
+RuntimeError: You called this URL via POST, but the URL doesn't end in a slash and you have APPEND_SLASH set. Django can't redirect to the slash URL while maintaining POST data. Change your form to point to 127.0.0.1:8000/user/user-login/ (note the trailing slash), or set APPEND_SLASH=False in your Django settings.
+ERROR 2025-04-24 10:10:39,283 basehttp 1116 7224 "POST /user/user-login HTTP/1.1" 500 71662
+WARNING 2025-04-24 10:11:03,092 log 1116 5704 Bad Request: /user/user-login/
+WARNING 2025-04-24 10:11:03,093 basehttp 1116 5704 "POST /user/user-login/ HTTP/1.1" 400 32
+WARNING 2025-04-24 10:11:20,300 log 1116 15696 Bad Request: /user/user-login/
+WARNING 2025-04-24 10:11:20,301 basehttp 1116 15696 "POST /user/user-login/ HTTP/1.1" 400 32
+WARNING 2025-04-24 10:12:14,786 log 1116 17868 Bad Request: /user/user-login/
+WARNING 2025-04-24 10:12:14,788 basehttp 1116 17868 "POST /user/user-login/ HTTP/1.1" 400 32
+INFO 2025-04-24 10:15:41,830 autoreload 1116 4548 C:\Users\roshan.mishra_jadegl\Documents\Project\backend\organization\views.py changed, reloading.
+INFO 2025-04-24 10:15:43,098 autoreload 12332 7416 Watching for file changes with StatReloader
+INFO 2025-04-24 10:35:40,941 autoreload 17888 7320 Watching for file changes with StatReloader
+WARNING 2025-04-24 10:35:47,544 log 17888 17900 Bad Request: /user/user-login/
+WARNING 2025-04-24 10:35:47,545 basehttp 17888 17900 "POST /user/user-login/ HTTP/1.1" 400 32
+WARNING 2025-04-24 10:41:31,895 log 17888 532 Bad Request: /user/user-login/
+WARNING 2025-04-24 10:41:31,897 basehttp 17888 532 "POST /user/user-login/ HTTP/1.1" 400 32
