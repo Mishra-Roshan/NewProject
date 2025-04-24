@@ -34,7 +34,7 @@ const UserRegister = () => {
     try {
       await registerUser(payload);
       alert('Registration successful!');
-      navigate('/login');
+      navigate('/user-login');
     } catch (error) {
       console.error('Registration error:', error.response?.data);
       alert('Registration failed: ' + (error.response?.data?.message || 'Try again.'));
@@ -47,7 +47,7 @@ const UserRegister = () => {
       <form onSubmit={handleSubmit} className="space-y-4">
         <input
           name="username"
-          placeholder="Organization Name"
+          placeholder="User Name"
           onChange={handleChange}
           required
           className="w-full p-2 border rounded"

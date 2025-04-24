@@ -743,3 +743,6 @@ INFO 2025-04-24 12:36:37,252 autoreload 16436 11872 Watching for file changes wi
 INFO 2025-04-24 12:41:39,246 basehttp 16436 14560 "POST /org/auth/register/ HTTP/1.1" 201 50
 INFO 2025-04-24 12:42:18,037 basehttp 16436 14560 "POST /org/auth/login/ HTTP/1.1" 200 483
 INFO 2025-04-24 12:44:17,454 basehttp 16436 14560 "POST /org/auth/login/ HTTP/1.1" 200 483
+INFO 2025-04-24 12:49:31,409 basehttp 16436 1800 "POST /org/auth/login/ HTTP/1.1" 200 483
+INFO 2025-04-24 12:55:19,109 basehttp 16436 1076 "POST /org/auth/register/ HTTP/1.1" 201 50
+INFO 2025-04-24 12:55:37,455 basehttp 16436 1076 "POST /org/auth/login/ HTTP/1.1" 200 483
