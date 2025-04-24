@@ -11,7 +11,7 @@ const UserLogin = () => {
     e.preventDefault();
 
     try {
-      const response = await loginUser({ username, password }); // changed from email to username
+      const response = await loginUser({ username, password });
       localStorage.setItem('access', response.data.access);
       localStorage.setItem('refresh', response.data.refresh);
 

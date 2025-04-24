@@ -710,3 +710,32 @@ INFO 2025-04-24 11:14:50,412 autoreload 11872 2512 Watching for file changes wit
 INFO 2025-04-24 11:15:29,888 basehttp 11872 7520 "POST /user/user-register/ HTTP/1.1" 201 42
 WARNING 2025-04-24 11:19:29,756 log 11872 17656 Bad Request: /org/auth/login/
 WARNING 2025-04-24 11:19:29,757 basehttp 11872 17656 "POST /org/auth/login/ HTTP/1.1" 400 32
+INFO 2025-04-24 11:34:26,074 basehttp 11872 16648 "OPTIONS /user/user-login/ HTTP/1.1" 200 0
+WARNING 2025-04-24 11:34:27,191 log 11872 16648 Bad Request: /user/user-login/
+WARNING 2025-04-24 11:34:27,192 basehttp 11872 16648 "POST /user/user-login/ HTTP/1.1" 400 32
+INFO 2025-04-24 11:44:45,822 basehttp 11872 11208 "OPTIONS /user/user-register/ HTTP/1.1" 200 0
+INFO 2025-04-24 11:44:47,079 basehttp 11872 11208 "POST /user/user-register/ HTTP/1.1" 201 42
+INFO 2025-04-24 11:46:23,413 basehttp 11872 1044 "POST /user/user-login/ HTTP/1.1" 200 483
+WARNING 2025-04-24 11:46:24,857 log 11872 1044 Not Found: /api/campaigns/
+WARNING 2025-04-24 11:46:24,858 basehttp 11872 1044 "GET /api/campaigns/ HTTP/1.1" 404 2518
+WARNING 2025-04-24 11:46:24,864 log 11872 1044 Not Found: /api/campaigns/
+WARNING 2025-04-24 11:46:24,865 basehttp 11872 1044 "GET /api/campaigns/ HTTP/1.1" 404 2518
+INFO 2025-04-24 11:46:46,850 basehttp 11872 7012 "POST /user/user-login/ HTTP/1.1" 200 483
+WARNING 2025-04-24 11:46:48,220 log 11872 7012 Not Found: /api/campaigns/
+WARNING 2025-04-24 11:46:48,220 basehttp 11872 7012 "GET /api/campaigns/ HTTP/1.1" 404 2518
+WARNING 2025-04-24 11:46:48,227 log 11872 7012 Not Found: /api/campaigns/
+WARNING 2025-04-24 11:46:48,229 basehttp 11872 7012 "GET /api/campaigns/ HTTP/1.1" 404 2518
+INFO 2025-04-24 11:48:15,198 basehttp 11872 12376 "POST /user/user-login/ HTTP/1.1" 200 483
+WARNING 2025-04-24 11:48:16,269 log 11872 12376 Not Found: /api/campaigns/
+WARNING 2025-04-24 11:48:16,270 basehttp 11872 12376 "GET /api/campaigns/ HTTP/1.1" 404 2518
+WARNING 2025-04-24 11:48:16,282 log 11872 12376 Not Found: /api/campaigns/
+WARNING 2025-04-24 11:48:16,283 basehttp 11872 12376 "GET /api/campaigns/ HTTP/1.1" 404 2518
+WARNING 2025-04-24 11:48:53,932 log 11872 7760 Bad Request: /org/auth/login/
+WARNING 2025-04-24 11:48:53,933 basehttp 11872 7760 "POST /org/auth/login/ HTTP/1.1" 400 32
+INFO 2025-04-24 11:49:04,502 basehttp 11872 11072 "POST /org/auth/login/ HTTP/1.1" 200 483
+INFO 2025-04-24 11:50:11,609 basehttp 11872 6016 "POST /user/user-login/ HTTP/1.1" 200 483
+WARNING 2025-04-24 11:50:12,826 log 11872 6016 Not Found: /api/campaigns/
+WARNING 2025-04-24 11:50:12,826 basehttp 11872 6016 "GET /api/campaigns/ HTTP/1.1" 404 2518
+WARNING 2025-04-24 11:50:12,833 log 11872 6016 Not Found: /api/campaigns/
+WARNING 2025-04-24 11:50:12,834 basehttp 11872 6016 "GET /api/campaigns/ HTTP/1.1" 404 2518
+INFO 2025-04-24 12:17:39,845 autoreload 15164 11600 Watching for file changes with StatReloader
