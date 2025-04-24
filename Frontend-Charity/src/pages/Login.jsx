@@ -24,11 +24,8 @@ const Login = () => {
       localStorage.setItem('isLoggedIn', 'true');
 
       // Redirect based on role
-      if (role === 'organization') {
         navigate('/org-dashboard');
-      } else {
-        navigate('/donor-dashboard');
-      }
+        
     } catch (error) {
       console.error('Login failed:', error);
       const errorMsg =
