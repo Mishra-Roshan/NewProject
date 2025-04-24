@@ -3,7 +3,7 @@ import { useNavigate, Link } from 'react-router-dom';
 import { loginUser } from '../../api/auth'; // adjust path if needed
 
 const UserLogin = () => {
-  const [email, setEmail] = useState('');
+  const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
   const navigate = useNavigate();
 
@@ -11,7 +11,7 @@ const UserLogin = () => {
     e.preventDefault();
 
     try {
-      const response = await loginUser({ email, password });
+      const response = await loginUser({ username, password }); // changed from email to username
       localStorage.setItem('access', response.data.access);
       localStorage.setItem('refresh', response.data.refresh);
 
@@ -29,11 +29,11 @@ const UserLogin = () => {
         <h2 className="text-2xl font-semibold mb-4 text-center">User Login</h2>
 
         <input
-          type="email"
-          placeholder="Email"
+          type="text"
+          placeholder="Username"
           className="w-full mb-3 px-4 py-2 border rounded"
-          value={email}
-          onChange={(e) => setEmail(e.target.value)}
+          value={username}
+          onChange={(e) => setUsername(e.target.value)}
           required
         />
         <input
