@@ -739,3 +739,23 @@ WARNING 2025-04-24 11:50:12,826 basehttp 11872 6016 "GET /api/campaigns/ HTTP/1.
 WARNING 2025-04-24 11:50:12,833 log 11872 6016 Not Found: /api/campaigns/
 WARNING 2025-04-24 11:50:12,834 basehttp 11872 6016 "GET /api/campaigns/ HTTP/1.1" 404 2518
 INFO 2025-04-24 12:17:39,845 autoreload 15164 11600 Watching for file changes with StatReloader
+INFO 2025-04-24 12:18:17,595 basehttp 15164 9112 "OPTIONS /org/auth/login/ HTTP/1.1" 200 0
+INFO 2025-04-24 12:18:20,268 basehttp 15164 9112 "POST /org/auth/login/ HTTP/1.1" 200 483
+INFO 2025-04-24 12:34:13,585 autoreload 15164 11600 C:\Users\roshan.mishra_jadegl\Documents\Project\backend\organization\views.py changed, reloading.
+INFO 2025-04-24 12:34:14,888 autoreload 3716 3816 Watching for file changes with StatReloader
+INFO 2025-04-24 12:42:38,797 autoreload 3716 3816 C:\Users\roshan.mishra_jadegl\Documents\Project\backend\organization\views.py changed, reloading.
+INFO 2025-04-24 12:42:39,863 autoreload 2940 2192 Watching for file changes with StatReloader
+INFO 2025-04-24 13:59:12,169 basehttp 2940 11044 "OPTIONS /user/user-login/ HTTP/1.1" 200 0
+INFO 2025-04-24 13:59:15,097 basehttp 2940 11044 "POST /user/user-login/ HTTP/1.1" 200 483
+WARNING 2025-04-24 13:59:16,787 log 2940 11044 Not Found: /api/campaigns/
+WARNING 2025-04-24 13:59:16,789 basehttp 2940 11044 "GET /api/campaigns/ HTTP/1.1" 404 2518
+WARNING 2025-04-24 13:59:16,799 log 2940 11044 Not Found: /api/campaigns/
+WARNING 2025-04-24 13:59:16,800 basehttp 2940 11044 "GET /api/campaigns/ HTTP/1.1" 404 2518
+INFO 2025-04-24 13:59:39,639 basehttp 2940 11044 "POST /org/auth/login/ HTTP/1.1" 200 483
+INFO 2025-04-24 14:00:13,743 autoreload 2940 2192 C:\Users\roshan.mishra_jadegl\Documents\Project\backend\organization\authentication.py changed, reloading.
+INFO 2025-04-24 14:00:15,163 autoreload 10224 19200 Watching for file changes with StatReloader
+INFO 2025-04-24 14:00:29,755 autoreload 10224 19200 C:\Users\roshan.mishra_jadegl\Documents\Project\backend\organization\views.py changed, reloading.
+INFO 2025-04-24 14:00:30,810 autoreload 5972 3968 Watching for file changes with StatReloader
+INFO 2025-04-24 14:00:47,533 basehttp 5972 16216 "POST /org/auth/login/ HTTP/1.1" 200 483
+INFO 2025-04-24 14:01:30,417 autoreload 5972 3968 C:\Users\roshan.mishra_jadegl\Documents\Project\backend\organization\views.py changed, reloading.
+INFO 2025-04-24 14:01:31,562 autoreload 3380 10500 Watching for file changes with StatReloader

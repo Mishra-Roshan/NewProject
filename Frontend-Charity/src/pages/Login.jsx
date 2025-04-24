@@ -3,7 +3,7 @@ import { useNavigate, Link } from 'react-router-dom';
 import axios from 'axios';
 
 const Login = () => {
-  const [username, setUsername] = useState(''); // Change variable to 'username'
+  const [email, setEmail] = useState(''); // Change variable to 'username'
   const [password, setPassword] = useState('');
   const role = localStorage.getItem('selectedRole') || 'donor';
   const navigate = useNavigate();
@@ -12,7 +12,7 @@ const Login = () => {
     e.preventDefault();
     try {
       const response = await axios.post('http://localhost:8000/org/auth/login/', {
-        username: username, // Sending username instead of email
+        email: email, // Sending username instead of email
         password: password,
       });
 
@@ -46,8 +46,8 @@ const Login = () => {
           type="text" // This is now a username field
           placeholder="Email"
           className="w-full mb-3 px-4 py-2 border rounded"
-          value={username} // Bind to 'username' state
-          onChange={(e) => setUsername(e.target.value)} // Update state on change
+          value={email} // Bind to 'username' state
+          onChange={(e) => setEmail(e.target.value)} // Update state on change
           required
         />
         <input
