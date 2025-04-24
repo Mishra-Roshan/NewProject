@@ -759,3 +759,4 @@ INFO 2025-04-24 14:00:30,810 autoreload 5972 3968 Watching for file changes with
 INFO 2025-04-24 14:00:47,533 basehttp 5972 16216 "POST /org/auth/login/ HTTP/1.1" 200 483
 INFO 2025-04-24 14:01:30,417 autoreload 5972 3968 C:\Users\roshan.mishra_jadegl\Documents\Project\backend\organization\views.py changed, reloading.
 INFO 2025-04-24 14:01:31,562 autoreload 3380 10500 Watching for file changes with StatReloader
+INFO 2025-04-24 14:03:19,497 basehttp 3380 14744 "POST /org/auth/login/ HTTP/1.1" 200 483
