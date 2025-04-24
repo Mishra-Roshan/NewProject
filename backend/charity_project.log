@@ -746,3 +746,17 @@ INFO 2025-04-24 12:44:17,454 basehttp 16436 14560 "POST /org/auth/login/ HTTP/1.
 INFO 2025-04-24 12:49:31,409 basehttp 16436 1800 "POST /org/auth/login/ HTTP/1.1" 200 483
 INFO 2025-04-24 12:55:19,109 basehttp 16436 1076 "POST /org/auth/register/ HTTP/1.1" 201 50
 INFO 2025-04-24 12:55:37,455 basehttp 16436 1076 "POST /org/auth/login/ HTTP/1.1" 200 483
+INFO 2025-04-24 14:05:46,435 basehttp 16436 17060 "OPTIONS /user/user-register/ HTTP/1.1" 200 0
+INFO 2025-04-24 14:05:47,923 basehttp 16436 17060 "POST /user/user-register/ HTTP/1.1" 201 42
+INFO 2025-04-24 14:11:39,479 basehttp 16436 18936 "POST /user/user-register/ HTTP/1.1" 201 42
+INFO 2025-04-24 14:13:31,759 basehttp 16436 18936 "POST /user/user-register/ HTTP/1.1" 201 42
+WARNING 2025-04-24 14:14:50,523 log 16436 16924 Bad Request: /user/user-register/
+WARNING 2025-04-24 14:14:50,524 basehttp 16436 16924 "POST /user/user-register/ HTTP/1.1" 400 58
+INFO 2025-04-24 14:15:00,057 basehttp 16436 16924 "POST /user/user-register/ HTTP/1.1" 201 42
+INFO 2025-04-24 14:15:49,403 basehttp 16436 16924 "OPTIONS /user/user-login/ HTTP/1.1" 200 0
+WARNING 2025-04-24 14:15:50,509 log 16436 16924 Bad Request: /user/user-login/
+WARNING 2025-04-24 14:15:50,510 basehttp 16436 16924 "POST /user/user-login/ HTTP/1.1" 400 32
+WARNING 2025-04-24 14:16:06,923 log 16436 16924 Bad Request: /user/user-login/
+WARNING 2025-04-24 14:16:06,924 basehttp 16436 16924 "POST /user/user-login/ HTTP/1.1" 400 32
+INFO 2025-04-24 14:20:46,219 autoreload 16436 11872 C:\Users\yash.homkar_jadeglob\Desktop\NewProject\backend\organization\views.py changed, reloading.
+INFO 2025-04-24 14:20:47,299 autoreload 16232 18196 Watching for file changes with StatReloader

@@ -21,10 +21,10 @@ class RegisterUser(APIView):
 
 class LoginView(APIView):
     def post(self, request):
-        username = request.data.get("username")  # this is the email
+        email = request.data.get("email")  # this is the email
         password = request.data.get("password")
 
-        user = authenticate(request, username=username, password=password)
+        user = authenticate(request, email=email, password=password)
         if user:
             refresh = RefreshToken.for_user(user)
             return Response({
