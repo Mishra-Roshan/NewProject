@@ -6,8 +6,18 @@ const Home = () => {
   const [showMenu, setShowMenu] = useState(false);
 
   const token = localStorage.getItem("access");
-  const user = localStorage.getItem("user");
-  const userName = user ? JSON.parse(user).name || "User" : "User";
+  const rawUser = localStorage.getItem("user");
+  let userName = "User";
+
+  let user = null;
+  try {
+    if (rawUser) {
+      user = JSON.parse(rawUser);
+      userName = user.name || "User";
+    }
+  } catch (error) {
+    console.error("Invalid user JSON in localStorage:", error);
+  }
 
   const handleLogout = () => {
     localStorage.removeItem("access");
