@@ -14,6 +14,7 @@ import CampaignDetail from './pages/campaigns/CampaignDetail.jsx';
 import ProtectedRoute from './components/ProtectedRoute.jsx';
 import DemoCampaign from './components/campaigns/demo/DemoCampaign.jsx';
 import UserLogin from './components/auth/UserLogin.jsx';
+import CreateCampaign from './pages/organization/CreateCampaign.jsx';
 
 export default function AppRouter() {
   return (
@@ -29,11 +30,13 @@ export default function AppRouter() {
         } />
         <Route path="/register" element={<Register />} />
         <Route path="/login" element={<Login />} />
+        
         <Route path="/campaigns" element={<CampaignList />} />
         <Route path="/campaigns/:id" element={<CampaignDetail />} />
         <Route path="/user-login" element={<UserLogin />} />
         <Route path="/user-register" element={<UserRegister />} />
         <Route path="/campaigns/demo" element={<DemoCampaign />} />
+        <Route path="/create-campaign" element={<CreateCampaign />} />
 
         
         <Route path="/dashboard" element={
