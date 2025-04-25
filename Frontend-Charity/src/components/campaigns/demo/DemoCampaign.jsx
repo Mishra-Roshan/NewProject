@@ -11,7 +11,7 @@ const DemoCampaign = () => {
     <div className="max-w-4xl mx-auto mt-10 p-6 bg-white shadow-md rounded-xl">
       <h1 className="text-3xl font-bold mb-4">Save the Children: Education Campaign</h1>
       <img
-        src="https://source.unsplash.com/featured/?children,education"
+        src="https://images.unsplash.com/photo-1694286068274-1058e6b04dcc?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
         alt="Campaign"
         className="rounded-lg w-full mb-4"
       />
