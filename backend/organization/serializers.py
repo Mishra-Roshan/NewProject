@@ -2,6 +2,9 @@ from rest_framework import serializers
 from .models import Organization
 from .models import Campaign
 
+
+# Serializer for Organization model
+# This serializer is used to validate and serialize the Organization data. It includes fields for the organization's name, contact email, password, logo, and description.
 class OrganizationRegisterSerializer(serializers.ModelSerializer):
     password = serializers.CharField(write_only=True)
 
@@ -11,11 +14,14 @@ class OrganizationRegisterSerializer(serializers.ModelSerializer):
 
     def create(self, validated_data):
         return Organization.objects.create_user(**validated_data)
-    
 
-from rest_framework import serializers
-from .models import Campaign
 
+
+
+
+
+# Serializer for Campaign model
+# This serializer is used to validate and serialize the Campaign data. It includes fields for the campaign's title, description, goal amount, status, deadline, and category.
 class CampaignSerializer(serializers.ModelSerializer):
 
     class Meta:
@@ -27,11 +33,10 @@ class CampaignSerializer(serializers.ModelSerializer):
             'goal_amount',
             'status',
             'deadline',
-            'created_at'
+            'created_at',
+            'category'
         ]
         read_only_fields = ['id', 'created_at']
 
-    def get_organization_email(self, obj):
-        return obj.organization.contact_email
-    
+   
 
