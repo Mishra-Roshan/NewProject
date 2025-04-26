@@ -15,10 +15,12 @@ import ProtectedRoute from './components/ProtectedRoute.jsx';
 import DemoCampaign from './components/campaigns/demo/DemoCampaign.jsx';
 import UserLogin from './components/auth/UserLogin.jsx';
 import CreateCampaign from './pages/organization/CreateCampaign.jsx';
+import Navbar from './components/auth/layout/Navbar.jsx';
 
 export default function AppRouter() {
   return (
     <Router>
+      <Navbar />
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/select-role" element={<RoleSelector />} />

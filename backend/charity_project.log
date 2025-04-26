@@ -312,3 +312,8 @@ INFO 2025-04-25 12:33:19,841 basehttp 3268 11988 "POST /org/auth/camp/campaigns/
 INFO 2025-04-25 12:33:30,190 basehttp 3268 9544 "GET /org/auth/camp/campaigns/ HTTP/1.1" 200 1476
 INFO 2025-04-25 12:34:14,922 autoreload 3268 12548 C:\Users\roshan.mishra_jadegl\Documents\Project\backend\organization\views.py changed, reloading.
 INFO 2025-04-25 12:34:15,928 autoreload 6684 8400 Watching for file changes with StatReloader
+INFO 2025-04-25 15:46:48,201 autoreload 20844 7948 Watching for file changes with StatReloader
+INFO 2025-04-25 15:50:24,253 basehttp 20844 20412 "POST /org/auth/register/ HTTP/1.1" 201 50
+INFO 2025-04-25 15:50:39,679 basehttp 20844 20412 "OPTIONS /org/auth/login/ HTTP/1.1" 200 0
+INFO 2025-04-25 15:50:41,053 basehttp 20844 20412 "POST /org/auth/login/ HTTP/1.1" 200 486
+INFO 2025-04-25 15:51:46,355 basehttp 20844 20412 "POST /org/auth/login/ HTTP/1.1" 200 486
