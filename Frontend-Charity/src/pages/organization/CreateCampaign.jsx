@@ -29,8 +29,8 @@ const CreateCampaign = () => {
     if (image) formData.append('image', image);
 
     try {
-      const token = localStorage.getItem('token');
-      await axios.post('/api/campaigns/create/', formData, {
+      const token = localStorage.getItem('accessToken');
+      await axios.post('http://localhost:8000/org/auth/camp/campaigns/', formData, {
         headers: {
           'Authorization': `Bearer ${token}`,
           'Content-Type': 'multipart/form-data',

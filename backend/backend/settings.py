@@ -192,3 +192,5 @@ AUTHENTICATION_BACKENDS = [
     'organization.authentication.OrganizationEmailBackend',  # Your custom backend
     'django.contrib.auth.backends.ModelBackend',  # keep for admin and fallback
 ]
+
+ 
