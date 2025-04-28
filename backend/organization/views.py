@@ -41,6 +41,7 @@ class LoginView(APIView):
             except Organization.DoesNotExist:
                 return Response({'detail': 'Organization not found for this email.'}, status=status.HTTP_404_NOT_FOUND)
             
+            
             refresh = RefreshToken.for_user(user)
             refresh['organization_email'] = email
             
@@ -93,6 +94,27 @@ class CampaignViewSet(viewsets.ModelViewSet):
             serializer.save(organization=organization)
         except Organization.DoesNotExist:
             raise serializers.ValidationError({"organization": "No matching organization for this user."})
+        
+
+
+    #for updating campaigns
+    def perform_update(self, serializer):
+        user = self.request.user
+
+        if not user.is_authenticated:
+            raise serializers.ValidationError({"detail": "Authentication required to update a campaign."})
+
+        try:
+            organization = Organization.objects.get(contact_email=self.get_organization_email())
+        except Organization.DoesNotExist:
+            raise serializers.ValidationError({"organization": "No matching organization for this user."})
+
+        # Only allow updating if the campaign belongs to the organization
+        if serializer.instance.organization != organization:
+            raise serializers.ValidationError({"detail": "You do not have permission to update this campaign."})
+
+        serializer.save()
+
         
 
 

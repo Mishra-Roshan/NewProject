@@ -22,4 +22,5 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('org/auth/', include('organization.urls')),  # Include organization-related URLs
     path('user/', include('users.urls')), # Include user-related URLs
+    path('donate/', include('donation.urls')), # Include donation-related URLs
 ]
