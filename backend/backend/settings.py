@@ -41,6 +41,7 @@ INSTALLED_APPS = [
     'corsheaders', # CORS headers for API requests
     'rest_framework', # Django REST framework for building APIs
     'organization', # 'organizations' app for managing organizations
+    'donation', # 'donations' app for managing donations
 
 
 ]
