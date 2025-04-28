@@ -3,7 +3,7 @@ import { useNavigate, Link } from 'react-router-dom';
 import axios from 'axios';
 
 const Login = () => {
-  const [email, setEmail] = useState(''); // Change variable to 'username'
+  const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const role = localStorage.getItem('selectedRole') || 'donor';
   const navigate = useNavigate();
@@ -12,20 +12,17 @@ const Login = () => {
     e.preventDefault();
     try {
       const response = await axios.post('http://localhost:8000/org/auth/login/', {
-        email: email, // Sending username instead of email
+        email: email,
         password: password,
       });
 
       const { access, refresh } = response.data;
 
-      // Save tokens in localStorage
       localStorage.setItem('accessToken', access);
       localStorage.setItem('refreshToken', refresh);
       localStorage.setItem('isLoggedIn', 'true');
 
-      // Redirect based on role
-        navigate('/campaigns');
-        
+      navigate('/campaigns');
     } catch (error) {
       console.error('Login failed:', error);
       const errorMsg =
@@ -35,38 +32,62 @@ const Login = () => {
   };
 
   return (
-    <div className="min-h-screen flex justify-center items-center bg-gray-100">
-      <form onSubmit={handleLogin} className="bg-white p-8 rounded-lg shadow-md w-full max-w-md">
-        <h2 className="text-2xl font-semibold mb-4 text-center capitalize">Login as Organization</h2>
+    <div
+      className="min-h-screen flex items-center justify-center bg-cover bg-center"
+      style={{
+        backgroundImage:
+          "url('https://images.unsplash.com/photo-1509099836639-18ba1795216d?q=80&w=1931&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D')",
+      }}
+    >
+      <div className="backdrop-blur-sm bg-white/40 p-10 rounded-3xl shadow-2xl w-full max-w-md border border-white/50">
+        <h2 className="text-4xl font-extrabold text-center mb-8 text-gray-800">
+          Organization Login
+        </h2>
 
-        <input
-          type="text" // This is now a username field
-          placeholder="Email"
-          className="w-full mb-3 px-4 py-2 border rounded"
-          value={email} // Bind to 'username' state
-          onChange={(e) => setEmail(e.target.value)} // Update state on change
-          required
-        />
-        <input
-          type="password"
-          placeholder="Password"
-          className="w-full mb-4 px-4 py-2 border rounded"
-          value={password}
-          onChange={(e) => setPassword(e.target.value)}
-          required
-        />
+        <form onSubmit={handleLogin} className="space-y-6">
+          <div>
+            <label className="block mb-2 text-gray-700 font-semibold">
+              Email
+            </label>
+            <input
+              type="text"
+              placeholder="Enter your email"
+              className="w-full px-4 py-3 border rounded-xl focus:ring-4 focus:ring-blue-300 focus:outline-none"
+              value={email}
+              onChange={(e) => setEmail(e.target.value)}
+              required
+            />
+          </div>
 
-        <button type="submit" className="w-full bg-blue-600 text-white py-2 rounded hover:bg-blue-700">
-          Login
-        </button>
+          <div>
+            <label className="block mb-2 text-gray-700 font-semibold">
+              Password
+            </label>
+            <input
+              type="password"
+              placeholder="Enter your password"
+              className="w-full px-4 py-3 border rounded-xl focus:ring-4 focus:ring-rose-300 focus:outline-none"
+              value={password}
+              onChange={(e) => setPassword(e.target.value)}
+              required
+            />
+          </div>
 
-        <p className="text-sm mt-4 text-center">
-          Not a user?{' '}
-          <Link to="/register" className="text-blue-500 hover:underline">
-            Register now!
+          <button
+            type="submit"
+            className="w-full bg-blue-600 hover:bg-blue-700 text-white py-3 rounded-xl font-semibold transition duration-300"
+          >
+            Login
+          </button>
+        </form>
+
+        <p className="text-sm mt-6 text-center text-gray-700 font-semibold">
+          Don't have an account?{' '}
+          <Link to="/register" className="text-blue-600 hover:underline">
+            Register now
           </Link>
         </p>
-      </form>
+      </div>
     </div>
   );
 };
