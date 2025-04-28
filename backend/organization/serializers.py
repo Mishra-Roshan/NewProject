@@ -34,7 +34,8 @@ class CampaignSerializer(serializers.ModelSerializer):
             'status',
             'deadline',
             'created_at',
-            'category'
+            'category',
+            'amount_gathered',
         ]
         read_only_fields = ['id', 'created_at']
 
