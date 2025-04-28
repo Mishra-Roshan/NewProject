@@ -33,8 +33,8 @@ export default function AppRouter() {
         <Route path="/register" element={<Register />} />
         <Route path="/login" element={<Login />} />
         
-        <Route path="/campaigns" element={<CampaignList />} />
-        <Route path="/campaigns/:id" element={<CampaignDetail />} />
+        {/* <Route path="/campaigns" element={<CampaignList />} /> */}
+        <Route path="/campaigns" element={<CampaignDetail />} />
         <Route path="/user-login" element={<UserLogin />} />
         <Route path="/user-register" element={<UserRegister />} />
         <Route path="/campaigns/demo" element={<DemoCampaign />} />

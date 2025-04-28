@@ -44,6 +44,7 @@ class Campaign(models.Model):
     status = models.CharField(max_length=20, choices=STATUS_CHOICES, default='draft')
     deadline = models.DateTimeField()
     created_at = models.DateTimeField(auto_now_add=True)
+    amount_gathered = models.DecimalField(max_digits=10, decimal_places=2, default=0.00)
     category = models.CharField(max_length=255, blank=True, null=True)
 
     def __str__(self):

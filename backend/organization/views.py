@@ -41,7 +41,6 @@ class LoginView(APIView):
             except Organization.DoesNotExist:
                 return Response({'detail': 'Organization not found for this email.'}, status=status.HTTP_404_NOT_FOUND)
             
-            request.session['organization_email'] = organization.contact_email
             refresh = RefreshToken.for_user(user)
             refresh['organization_email'] = email
             

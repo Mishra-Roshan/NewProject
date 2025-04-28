@@ -37,7 +37,7 @@ const CreateCampaign = () => {
         },
       });
       alert('Campaign submitted for review!');
-      navigate('/orgdashboard');
+      navigate('/campaigns'); // Redirect to the campaigns page after submission
     } catch (err) {
       console.error('Error creating campaign:', err.response?.data);
       alert('Failed to create campaign');
