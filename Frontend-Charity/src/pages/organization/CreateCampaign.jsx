@@ -1,106 +1,133 @@
 import { useState } from 'react';
+import { useLocation, useNavigate } from 'react-router-dom';
 import axios from 'axios';
-import { useNavigate } from 'react-router-dom';
 
 const CreateCampaign = () => {
   const navigate = useNavigate();
+  const location = useLocation();
+  const editingCampaign = location.state?.campaign || null;
+
   const [form, setForm] = useState({
-    title: '',
-    description: '',
-    goal_amount: '',
-    deadline: '',
-    category: '',
+    title: editingCampaign?.title || '',
+    description: editingCampaign?.description || '',
+    goal_amount: editingCampaign?.goal_amount || '',
+    deadline: editingCampaign?.deadline ? editingCampaign.deadline.split('T')[0] : '',
+    category: editingCampaign?.category || 'Education',
+    status: editingCampaign?.status || 'Active',
   });
-  const [image, setImage] = useState(null);
 
   const handleChange = (e) => {
-    setForm({ ...form, [e.target.name]: e.target.value });
-  };
-
-  const handleImageChange = (e) => {
-    setImage(e.target.files[0]);
+    const { name, value } = e.target;
+    setForm(prev => ({ ...prev, [name]: value }));
   };
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-
-    const formData = new FormData();
-    Object.keys(form).forEach((key) => formData.append(key, form[key]));
-    if (image) formData.append('image', image);
+    const token = localStorage.getItem('accessToken');
 
     try {
-      const token = localStorage.getItem('accessToken');
-      await axios.post('http://localhost:8000/org/auth/camp/campaigns/', formData, {
-        headers: {
-          'Authorization': `Bearer ${token}`,
-          'Content-Type': 'multipart/form-data',
-        },
-      });
-      alert('Campaign submitted for review!');
-      navigate('/campaigns'); // Redirect to the campaigns page after submission
-    } catch (err) {
-      console.error('Error creating campaign:', err.response?.data);
-      alert('Failed to create campaign');
+      if (editingCampaign) {
+        // Update existing campaign
+        await axios.put(`http://localhost:8000/org/auth/camp/campaigns/${editingCampaign.id}/`, form, {
+          headers: {
+            Authorization: `Bearer ${token}`,
+          },
+        });
+        alert('Campaign updated successfully!');
+      } else {
+        // Create new campaign
+        await axios.post('http://localhost:8000/org/auth/camp/create/', form, {
+          headers: {
+            Authorization: `Bearer ${token}`,
+          },
+        });
+        alert('Campaign created successfully!');
+      }
+
+      navigate('/orgdashboard');
+    } catch (error) {
+      console.error('Error saving campaign:', error.response?.data);
+      alert('Failed to save campaign. Please try again.');
     }
   };
 
   return (
-    <div className="max-w-xl mx-auto p-6 bg-white shadow rounded mt-10">
-      <h2 className="text-2xl font-semibold mb-4 text-center">Start a New Campaign</h2>
+    <div className="max-w-2xl mx-auto p-6 mt-10 border rounded-xl shadow">
+      <h2 className="text-2xl font-bold mb-6 text-center">
+        {editingCampaign ? 'Update Campaign' : 'Start a New Campaign'}
+      </h2>
+
       <form onSubmit={handleSubmit} className="space-y-4">
         <input
-          name="title"
           type="text"
+          name="title"
           placeholder="Campaign Title"
-          className="w-full border p-2 rounded"
+          value={form.title}
           onChange={handleChange}
           required
+          className="w-full p-2 border rounded"
         />
         <textarea
           name="description"
           placeholder="Campaign Description"
-          className="w-full border p-2 rounded"
-          rows={5}
+          value={form.description}
           onChange={handleChange}
           required
+          className="w-full p-2 border rounded h-32"
         />
         <input
-          name="goal_amount"
           type="number"
-          placeholder="Goal Amount (INR)"
-          className="w-full border p-2 rounded"
+          name="goal_amount"
+          placeholder="Goal Amount (in USD)"
+          value={form.goal_amount}
           onChange={handleChange}
           required
+          className="w-full p-2 border rounded"
         />
+        
+        {/* Deadline Calendar Input */}
         <input
-          name="deadline"
           type="date"
-          className="w-full border p-2 rounded"
+          name="deadline"
+          value={form.deadline}
           onChange={handleChange}
           required
+          className="w-full p-2 border rounded"
         />
+
+        {/* Category Dropdown */}
         <select
           name="category"
-          className="w-full border p-2 rounded"
+          value={form.category}
           onChange={handleChange}
           required
+          className="w-full p-2 border rounded"
         >
-          <option value="">Select Category</option>
-          <option value="education">Education</option>
-          <option value="health">Health</option>
-          <option value="disaster">Disaster Relief</option>
+          <option value="Education">Education</option>
+          <option value="Disaster">Disaster Relief</option>
+          <option value="Health">Health & Medical</option>
+          <option value="Other">Other</option>
         </select>
-        <input
-          type="file"
-          accept="image/*"
-          onChange={handleImageChange}
-          className="w-full"
-        />
+
+        {/* Status Dropdown */}
+        <select
+          name="status"
+          value={form.status}
+          onChange={handleChange}
+          required
+          className="w-full p-2 border rounded"
+        >
+          <option value="Active">Active</option>
+          <option value="Completed">Completed</option>
+          <option value="Pending">Pending</option>
+          <option value="Cancelled">Cancelled</option>
+        </select>
+
         <button
           type="submit"
-          className="w-full bg-blue-600 text-white py-2 rounded hover:bg-blue-700"
+          className="bg-blue-600 text-white w-full py-2 px-4 rounded hover:bg-blue-700"
         >
-          Submit Campaign
+          {editingCampaign ? 'Update Campaign' : 'Create Campaign'}
         </button>
       </form>
     </div>
