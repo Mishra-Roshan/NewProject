@@ -13,7 +13,7 @@ const CreateCampaign = () => {
     goal_amount: editingCampaign?.goal_amount || '',
     deadline: editingCampaign?.deadline ? editingCampaign.deadline.split('T')[0] : '',
     category: editingCampaign?.category || 'Education',
-    status: editingCampaign?.status || 'Active',
+    status: editingCampaign?.status || 'active',
   });
 
   const handleChange = (e) => {
@@ -28,7 +28,7 @@ const CreateCampaign = () => {
     try {
       if (editingCampaign) {
         // Update existing campaign
-        await axios.put(`http://localhost:8000/org/auth/camp/campaigns/${editingCampaign.id}/`, form, {
+        await axios.patch(`http://localhost:8000/org/auth/camp/campaigns/${editingCampaign.id}/`, form, {
           headers: {
             Authorization: `Bearer ${token}`,
           },
@@ -36,7 +36,7 @@ const CreateCampaign = () => {
         alert('Campaign updated successfully!');
       } else {
         // Create new campaign
-        await axios.post('http://localhost:8000/org/auth/camp/create/', form, {
+        await axios.post('http://localhost:8000/org/auth/camp/campaigns/', form, {
           headers: {
             Authorization: `Bearer ${token}`,
           },
@@ -117,10 +117,9 @@ const CreateCampaign = () => {
           required
           className="w-full p-2 border rounded"
         >
-          <option value="Active">Active</option>
-          <option value="Completed">Completed</option>
-          <option value="Pending">Pending</option>
-          <option value="Cancelled">Cancelled</option>
+          <option value="active">Active</option>
+          <option value="completed">Completed</option>
+          <option value="draft">Draft</option>
         </select>
 
         <button

@@ -8,7 +8,7 @@ from rest_framework_simplejwt.tokens import RefreshToken,AccessToken
 from django.contrib.auth import authenticate
 from rest_framework import status
 from rest_framework import viewsets, permissions
-from rest_framework import status as drf_status
+
 from .models import Campaign, Organization
 from rest_framework import serializers
 
@@ -44,7 +44,7 @@ class LoginView(APIView):
             
             refresh = RefreshToken.for_user(user)
             refresh['organization_email'] = email
-            
+          
 
             return Response({
                 'access': str(refresh.access_token),
@@ -53,15 +53,23 @@ class LoginView(APIView):
             }, status=status.HTTP_200_OK)
         else:
             return Response({'detail': 'Invalid credentials'}, status=status.HTTP_400_BAD_REQUEST)
+        
+
+# class PublicCampaignListView(generics.ListAPIView):
+#     queryset = Campaign.objects.all()
+#     serializer_class = CampaignSerializer
+#     permission_classes = [] # Allow any user to access this view
 
 #campaign viewset       
 class CampaignViewSet(viewsets.ModelViewSet):
+    print("Running")
     serializer_class = CampaignSerializer
     permission_classes = [permissions.IsAuthenticated]  
 
     #for getting the organization email from the token
     # This method extracts the organization email from the JWT token in the request headers.
     def get_organization_email(self):
+        print("Running")
         auth_header = self.request.headers.get('Authorization')
         if not auth_header:
             return None
@@ -69,13 +77,16 @@ class CampaignViewSet(viewsets.ModelViewSet):
         token_str = auth_header.split(' ')[1]
         access_token = AccessToken(token_str)
         organiztion_email = access_token.get('organization_email', None)
+        print(organiztion_email)
         return  organiztion_email
     
 
 
     #for fetching campaigns
     def get_queryset(self):
+        print("Running")
         contact_email = self.get_organization_email()
+     
         if contact_email:
             return Campaign.objects.filter(organization__contact_email=contact_email)
         return Campaign.objects.all()
