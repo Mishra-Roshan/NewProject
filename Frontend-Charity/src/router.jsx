@@ -16,6 +16,7 @@ import DemoCampaign from './components/campaigns/demo/DemoCampaign.jsx';
 import UserLogin from './components/auth/UserLogin.jsx';
 import CreateCampaign from './pages/organization/CreateCampaign.jsx';
 import Navbar from './components/auth/layout/Navbar.jsx';
+import PasswordReset from './components/auth/PasswordReset.jsx';
 
 export default function AppRouter() {
   return (
@@ -39,8 +40,7 @@ export default function AppRouter() {
         <Route path="/user-register" element={<UserRegister />} />
         <Route path="/campaigns/demo" element={<DemoCampaign />} />
         <Route path="/create-campaign" element={<CreateCampaign />} />
-
-        
+        <Route path="/user-forgot-password" element={<PasswordReset />} />
         <Route path="/dashboard" element={
           <PrivateRoute>
             <Dashboard />
