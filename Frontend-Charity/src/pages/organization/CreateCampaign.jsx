@@ -117,9 +117,10 @@ const CreateCampaign = () => {
           required
           className="w-full p-2 border rounded"
         >
-          <option value="active">Active</option>
-          <option value="completed">Completed</option>
-          <option value="draft">Draft</option>
+          <option value="Active">Active</option>
+          <option value="Completed">Completed</option>
+          <option value="Pending">Pending</option>
+          <option value="Cancelled">Cancelled</option>
         </select>
 
         <button
