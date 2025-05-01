@@ -2,7 +2,7 @@ from django.shortcuts import render
 
 from rest_framework.views import APIView
 from rest_framework.response import Response
-from rest_framework import status
+from rest_framework import status,generics
 from .serializers import OrganizationRegisterSerializer,CampaignSerializer
 from rest_framework_simplejwt.tokens import RefreshToken,AccessToken
 from django.contrib.auth import authenticate
@@ -54,6 +54,13 @@ class LoginView(APIView):
         else:
             return Response({'detail': 'Invalid credentials'}, status=status.HTTP_400_BAD_REQUEST)
 
+
+class PublicCampaignListView(generics.ListAPIView):
+    queryset = Campaign.objects.all()
+    serializer_class = CampaignSerializer
+    permission_classes = []
+
+    
 #campaign viewset       
 class CampaignViewSet(viewsets.ModelViewSet):
     serializer_class = CampaignSerializer
@@ -114,6 +121,12 @@ class CampaignViewSet(viewsets.ModelViewSet):
             raise serializers.ValidationError({"detail": "You do not have permission to update this campaign."})
 
         serializer.save()
+
+
+
+
+
+
 
         
 

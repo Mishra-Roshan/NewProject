@@ -194,4 +194,29 @@ AUTHENTICATION_BACKENDS = [
     'django.contrib.auth.backends.ModelBackend',  # keep for admin and fallback
 ]
 
- 
+
+import logging
+
+logging.basicConfig(level=logging.DEBUG)
+
+
+# settings.py
+
+EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+EMAIL_HOST = 'smtp.gmail.com'  # or your provider's SMTP server
+EMAIL_PORT = 587
+EMAIL_USE_TLS = True
+EMAIL_HOST_USER = 'roshanmishra200407@gmail.com'         # your email
+EMAIL_HOST_PASSWORD = 'tzkrcoikaagxumeh'        # app password (not your Gmail password)
+DEFAULT_FROM_EMAIL ='roshanmishra200407@gmail.com'
+
+
+
+# Use in-memory cache  
+CACHES = {
+    'default': {
+        'BACKEND': 'django.core.cache.backends.locmem.LocMemCache',  # In-memory cache
+        'LOCATION': 'unique-snowflake',
+    }
+}
+
