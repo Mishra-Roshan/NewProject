@@ -75,11 +75,11 @@ const CampaignDetail = () => {
       {/* Show all campaigns */}
       <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
         {campaigns.map((campaign) => {
-          const { id, title, description, goal_amount, status, deadline, category } = campaign;
-          const raised_amount = campaign.raised_amount || 0;
+          const { id, title, description, goal_amount, status, amount_gathered, category, deadline } = campaign;
+          const raised_amount = campaign.amount_gathered || 0;
           const progress = Math.min((raised_amount / parseFloat(goal_amount)) * 100, 100);
 
-          return (
+          return ( 
             <div key={id} className="bg-white shadow-md rounded-lg p-4">
               <h3 className="text-xl font-bold mb-2">{title}</h3>
               <p className="text-gray-600 mb-1 capitalize">{category || "Uncategorized"}</p>

@@ -27,6 +27,7 @@ class PasswordResetSerializer(serializers.Serializer):
 # Serializer for Campaign model
 # This serializer is used to validate and serialize the Campaign data. It includes fields for the campaign's title, description, goal amount, status, deadline, and category.
 class CampaignSerializer(serializers.ModelSerializer):
+    organization_name = serializers.CharField(source='organization.name', read_only=True)
 
     organization_name = serializers.CharField(source='organization.name',read_only=True)
 

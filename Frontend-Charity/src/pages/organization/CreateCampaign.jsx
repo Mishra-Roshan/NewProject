@@ -28,7 +28,7 @@ const CreateCampaign = () => {
     try {
       if (editingCampaign) {
         // Update existing campaign
-        await axios.put(`http://localhost:8000/org/auth/camp/campaigns/${editingCampaign.id}/`, form, {
+        await axios.patch(`http://localhost:8000/org/auth/camp/campaigns/${editingCampaign.id}/`, form, {
           headers: {
             Authorization: `Bearer ${token}`,
           },
@@ -117,10 +117,10 @@ const CreateCampaign = () => {
           required
           className="w-full p-2 border rounded"
         >
-          <option value="active">Active</option>
-          <option value="completed">Completed</option>
-          <option value="pending">Pending</option>
-          <option value="cancelled">Cancelled</option>
+          <option value="Active">Active</option>
+          <option value="Completed">Completed</option>
+          <option value="Pending">Pending</option>
+          <option value="Cancelled">Cancelled</option>
         </select>
 
         <button
