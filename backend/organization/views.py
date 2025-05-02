@@ -6,7 +6,7 @@ from rest_framework import status,generics
 from .serializers import OrganizationRegisterSerializer,CampaignSerializer
 from rest_framework_simplejwt.tokens import RefreshToken,AccessToken
 from django.contrib.auth import authenticate
-from rest_framework import status
+from rest_framework import status as drf_status
 from rest_framework import viewsets, permissions
 
 from .models import Campaign, Organization
@@ -55,21 +55,17 @@ class LoginView(APIView):
             return Response({'detail': 'Invalid credentials'}, status=status.HTTP_400_BAD_REQUEST)
         
 
-# class PublicCampaignListView(generics.ListAPIView):
-#     queryset = Campaign.objects.all()
-#     serializer_class = CampaignSerializer
-#     permission_classes = [] # Allow any user to access this view
-
-
 class PublicCampaignListView(generics.ListAPIView):
     queryset = Campaign.objects.all()
     serializer_class = CampaignSerializer
-    permission_classes = []
+    permission_classes = [] # Allow any user to access this view
+
+ 
 
     
 #campaign viewset       
 class CampaignViewSet(viewsets.ModelViewSet):
-    print("Running")
+  
     serializer_class = CampaignSerializer
     permission_classes = [permissions.IsAuthenticated]  
 
