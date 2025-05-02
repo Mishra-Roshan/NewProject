@@ -12,10 +12,10 @@ const CampaignDetail = () => {
 
   const fetchCampaigns = async () => {
     try {
-      const token = localStorage.getItem('accessToken');
+      const tokens = localStorage.getItem('accessToken');
       const res = await axios.get(`http://localhost:8000/org/auth/camp/campaigns/`, {
         headers: {
-          Authorization: `Bearer ${token}`,
+          Authorization: `Bearer ${tokens}`,
         },
       });
       setCampaigns(res.data);
