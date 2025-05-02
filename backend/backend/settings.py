@@ -190,7 +190,7 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 
 AUTHENTICATION_BACKENDS = [
-    'organization.authentication.OrganizationEmailBackend',  # Your custom backend
+    'organization.authentication.OrganizationEmailBackend',  #custom backend for organization verification
     'django.contrib.auth.backends.ModelBackend',  # keep for admin and fallback
 ]
 
@@ -200,15 +200,15 @@ import logging
 logging.basicConfig(level=logging.DEBUG)
 
 
-# settings.py
+# For email setup for otp sending
 
 EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
-EMAIL_HOST = 'smtp.gmail.com'  # or your provider's SMTP server
+EMAIL_HOST = 'smtp.gmail.com'  #  Gmail's SMTP server
 EMAIL_PORT = 587
 EMAIL_USE_TLS = True
 EMAIL_HOST_USER = 'roshanmishra200407@gmail.com'         # your email
-EMAIL_HOST_PASSWORD = 'tzkrcoikaagxumeh'        # app password (not your Gmail password)
-DEFAULT_FROM_EMAIL ='roshanmishra200407@gmail.com'
+EMAIL_HOST_PASSWORD = 'tzkrcoikaagxumeh'        # app password  
+DEFAULT_FROM_EMAIL ='roshanmishra200407@gmail.com' #email id for sending otp
 
 
 
@@ -219,4 +219,9 @@ CACHES = {
         'LOCATION': 'unique-snowflake',
     }
 }
+
+
+#Razorpay integartion
+RAZORPAY_KEY_ID = "your_key_id"
+RAZORPAY_KEY_SECRET = "your_key_secret"
 
