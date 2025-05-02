@@ -12,8 +12,8 @@ const Login = () => {
     e.preventDefault();
     try {
       const response = await axios.post('http://localhost:8000/org/auth/login/', {
-        email: email,
-        password: password,
+        email,
+        password,
       });
 
       const { access, refresh } = response.data;
@@ -30,6 +30,9 @@ const Login = () => {
       alert(errorMsg);
     }
   };
+
+  // Decide reset path based on role
+  const resetPath = role === 'organization' ? '/login' : '/user-login';
 
   return (
     <div
@@ -71,6 +74,14 @@ const Login = () => {
               onChange={(e) => setPassword(e.target.value)}
               required
             />
+            <div className="mt-2 text-right">
+              <Link
+                to="/user-forgot-password"
+                className="text-sm text-blue-600 hover:underline font-medium"
+              >
+                Forgot Password?
+              </Link>
+            </div>
           </div>
 
           <button

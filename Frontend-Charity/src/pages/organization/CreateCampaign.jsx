@@ -44,7 +44,7 @@ const CreateCampaign = () => {
         alert('Campaign created successfully!');
       }
 
-      navigate('/orgdashboard');
+      navigate('/campaigns');
     } catch (error) {
       console.error('Error saving campaign:', error.response?.data);
       alert('Failed to save campaign. Please try again.');

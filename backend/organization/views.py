@@ -60,6 +60,9 @@ class PublicCampaignListView(generics.ListAPIView):
     serializer_class = CampaignSerializer
     permission_classes = [] # Allow any user to access this view
 
+ 
+
+    
 #campaign viewset       
 class CampaignViewSet(viewsets.ModelViewSet):
   
@@ -125,6 +128,12 @@ class CampaignViewSet(viewsets.ModelViewSet):
             raise serializers.ValidationError({"detail": "You do not have permission to update this campaign."})
 
         serializer.save()
+
+
+
+
+
+
 
         
 

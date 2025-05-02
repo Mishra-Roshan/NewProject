@@ -63,7 +63,7 @@ const UserRegister = () => {
             required
             className="w-full px-4 py-3 border rounded focus:outline-none focus:ring-2 focus:ring-blue-500"
           />
-          <span className="absolute left-3 top-3 text-gray-500">👤</span>
+          <span className="absolute left-0 top-3 text-gray-500">👤</span>
         </div>
 
         <div className="relative mb-4">
@@ -75,7 +75,7 @@ const UserRegister = () => {
             required
             className="w-full px-4 py-3 border rounded focus:outline-none focus:ring-2 focus:ring-blue-500"
           />
-          <span className="absolute left-3 top-3 text-gray-500">📧</span>
+          <span className="absolute left-0 top-3 text-gray-500">📧</span>
         </div>
 
         <div className="relative mb-4">
@@ -87,7 +87,7 @@ const UserRegister = () => {
             required
             className="w-full px-4 py-3 border rounded focus:outline-none focus:ring-2 focus:ring-blue-500"
           />
-          <span className="absolute left-3 top-3 text-gray-500">🔒</span>
+          <span className="absolute left-0 top-3 text-gray-500">🔒</span>
         </div>
 
         <div className="relative mb-6">
@@ -99,7 +99,7 @@ const UserRegister = () => {
             required
             className="w-full px-4 py-3 border rounded focus:outline-none focus:ring-2 focus:ring-blue-500"
           />
-          <span className="absolute left-3 top-3 text-gray-500">🔁</span>
+          <span className="absolute left-0 top-3 text-gray-500">🔁</span>
         </div>
 
         <button

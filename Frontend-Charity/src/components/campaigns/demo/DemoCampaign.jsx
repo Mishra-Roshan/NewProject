@@ -1,33 +1,70 @@
 import { useNavigate } from 'react-router-dom';
+import { useEffect, useState } from 'react';
+import axios from 'axios';
 
 const DemoCampaign = () => {
   const navigate = useNavigate();
+  const [campaigns, setCampaigns] = useState([]);
+  const [loading, setLoading] = useState(true);
 
-  const handleDonateClick = () => {
-    navigate('/user-login'); // or add check if already logged in
+  useEffect(() => {
+    const fetchCampaigns = async () => {
+      try {
+        const response = await axios.get('http://127.0.0.1:8000/org/auth/view-campaigns/');
+        setCampaigns(response.data);
+      } catch (error) {
+        console.error('Error fetching campaigns:', error);
+      } finally {
+        setLoading(false);
+      }
+    };
+
+    fetchCampaigns();
+  }, []);
+
+  const handleDonateClick = (campaignId) => {
+    // You can also store this ID in localStorage or context if needed
+    navigate('/user-login'); // or `/donate/${campaignId}` if you implement detailed donation flow
   };
 
   return (
-    <div className="max-w-4xl mx-auto mt-10 p-6 bg-white shadow-md rounded-xl">
-      <h1 className="text-3xl font-bold mb-4">Save the Children: Education Campaign</h1>
-      <img
-        src="https://images.unsplash.com/photo-1694286068274-1058e6b04dcc?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
-        alt="Campaign"
-        className="rounded-lg w-full mb-4"
-      />
-      <p className="text-gray-700 mb-4">
-        This campaign supports underprivileged children in rural areas with basic educational
-        resources like books, uniforms, and access to learning materials.
-      </p>
-      <p className="text-lg font-semibold mb-2">Goal: ₹1,00,000</p>
-      <p className="text-sm text-gray-600 mb-6">Ends: June 30, 2025</p>
+    <div className="max-w-6xl mx-auto p-6">
+      <h1 className="text-3xl font-bold mb-6 text-center">Explore Active Campaigns</h1>
 
-      <button
-        onClick={handleDonateClick}
-        className="bg-green-600 text-white py-2 px-4 rounded hover:bg-green-700 transition"
-      >
-        Donate Now
-      </button>
+      {loading ? (
+        <p className="text-center">Loading campaigns...</p>
+      ) : campaigns.length === 0 ? (
+        <p className="text-center text-gray-500">No campaigns available at the moment.</p>
+      ) : (
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+          {campaigns.map((campaign) => (
+            <div key={campaign.id} className="bg-white shadow-md rounded-lg p-6">
+              <img
+                src={`https://source.unsplash.com/random/800x400?sig=${campaign.id}&${campaign.category}`}
+                alt={campaign.title}
+                className="rounded-md w-full h-48 object-cover mb-4"
+              />
+              <h2 className="text-xl font-semibold mb-2 capitalize">{campaign.title}</h2>
+              <p className="text-gray-700 mb-2">{campaign.description}</p>
+              <p className="text-sm text-gray-500 mb-1">Category: {campaign.category}</p>
+              <p className="text-sm text-gray-500 mb-1">Organization: {campaign.organization_name}</p>
+              <p className="text-sm text-gray-500 mb-1">
+                Goal: ₹{parseFloat(campaign.goal_amount).toLocaleString()}
+              </p>
+              <p className="text-sm text-gray-500 mb-4">
+                Deadline: {new Date(campaign.deadline).toLocaleDateString()}
+              </p>
+
+              <button
+                onClick={() => handleDonateClick(campaign.id)}
+                className="bg-green-600 text-white py-2 px-4 rounded hover:bg-green-700 transition"
+              >
+                Donate Now
+              </button>
+            </div>
+          ))}
+        </div>
+      )}
     </div>
   );
 };

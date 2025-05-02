@@ -16,7 +16,11 @@ class OrganizationRegisterSerializer(serializers.ModelSerializer):
         return Organization.objects.create_user(**validated_data)
 
 
-
+#saving new password after reset
+class PasswordResetSerializer(serializers.Serializer):
+    email = serializers.EmailField()
+    otp = serializers.CharField()
+    password = serializers.CharField(write_only=True)
 
 
 
@@ -25,6 +29,8 @@ class OrganizationRegisterSerializer(serializers.ModelSerializer):
 class CampaignSerializer(serializers.ModelSerializer):
     
     organization_name = serializers.CharField(source='organization.name', read_only=True)
+
+    organization_name = serializers.CharField(source='organization.name',read_only=True)
 
     class Meta:
         model = Campaign
