@@ -222,6 +222,6 @@ CACHES = {
 
 
 #Razorpay integartion
-RAZORPAY_KEY_ID = "your_key_id"
-RAZORPAY_KEY_SECRET = "your_key_secret"
+RAZORPAY_KEY_ID = "rzp_test_cZM3pZDnarJbXZ"
+RAZORPAY_KEY_SECRET = "fuZiDNYZnDUaonWfniFCEjYk"
 
