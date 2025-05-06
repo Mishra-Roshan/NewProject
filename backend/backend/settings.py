@@ -11,6 +11,7 @@ https://docs.djangoproject.com/en/5.2/ref/settings/
 """
 
 from pathlib import Path
+import os
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -225,3 +226,11 @@ CACHES = {
 RAZORPAY_KEY_ID = "rzp_test_cZM3pZDnarJbXZ"
 RAZORPAY_KEY_SECRET = "fuZiDNYZnDUaonWfniFCEjYk"
 
+
+#setting for media to set images
+MEDIA_URL = '/media/'
+MEDIA_ROOT = os.path.join( BASE_DIR,  'media')
+
+
+MAX_UPLOAD_SIZE = 5 * 1024 * 1024  # 5MB
+ALLOWED_IMAGE_EXTENSIONS = ['.jpg', '.jpeg', '.png']

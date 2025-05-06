@@ -30,7 +30,9 @@ class CampaignSerializer(serializers.ModelSerializer):
     
     organization_name = serializers.CharField(source='organization.name', read_only=True)
 
-    organization_name = serializers.CharField(source='organization.name',read_only=True)
+ 
+
+   
 
     class Meta:
         model = Campaign
@@ -44,9 +46,13 @@ class CampaignSerializer(serializers.ModelSerializer):
             'created_at',
             'category',
             'amount_gathered',
-            'organization_name'
+            'organization_name',
+            'images',
+             
         ]
         read_only_fields = ['id', 'created_at']
+
+     
 
    
 

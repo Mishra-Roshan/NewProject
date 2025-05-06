@@ -47,7 +47,7 @@ class DonationCreateView(generics.CreateAPIView):
 
 
 class VerifyPaymentView(APIView):
-    permission_classes = [AllowAny]  # You can restrict it if needed
+    permission_classes = [AllowAny]
 
     def post(self, request):
         data = request.data
@@ -58,12 +58,36 @@ class VerifyPaymentView(APIView):
                 'razorpay_signature': data['razorpay_signature']
             })
 
-            donation = Donation.objects.get(id=data['donation_id'], transaction_id=data['razorpay_order_id'])
-            donation.status = 'paid'
-            donation.save()
+            donation = Donation.objects.get(
+                id=data['donation_id'],
+                transaction_id=data['razorpay_order_id']
+            )
 
-            return Response({'message': 'Payment verified successfully.'})
+            if donation.status != 'paid':  # Avoid double counting
+                donation.status = 'paid'
+                donation.save()
+
+                # Update the campaign's gathered amount
+                campaign = donation.campaign
+                campaign.amount_gathered += donation.amount
+                campaign.save()
+
+            return Response({
+                'message': 'Payment verified successfully.',
+                'receipt': {
+                    'amount': donation.amount,
+                    'campaign_id': campaign.id,
+                    'campaign_name': campaign.title,
+                    'donor_name': donation.user.username if donation.user else "Anonymous",
+                    'order_id': data['razorpay_order_id'],
+                    'payment_id': data['razorpay_payment_id'],
+                    'status': donation.status,
+                    'date': donation.donated_at.strftime("%Y-%m-%d %H:%M:%S")
+                }
+            })
+
         except razorpay.errors.SignatureVerificationError:
             return Response({'error': 'Payment verification failed.'}, status=status.HTTP_400_BAD_REQUEST)
+
         except Donation.DoesNotExist:
             return Response({'error': 'Donation record not found.'}, status=status.HTTP_404_NOT_FOUND)

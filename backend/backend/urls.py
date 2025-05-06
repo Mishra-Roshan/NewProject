@@ -17,10 +17,13 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path
 from django.urls import include
+from django.conf.urls.static import static
+from django.conf import settings
+
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('org/auth/', include('organization.urls')),  # Include organization-related URLs
     path('user/', include('users.urls')), # Include user-related URLs
     path('donate/', include('donation.urls')), # Include donation-related URLs
-]
+]  + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

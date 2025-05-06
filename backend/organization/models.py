@@ -17,7 +17,7 @@ class OrganizationManager(BaseUserManager):
 class Organization(AbstractBaseUser):
     name = models.CharField(max_length=255)
     contact_email = models.EmailField(unique=True)
-    logo = models.ImageField(upload_to='logos/', blank=True, null=True)
+    logo = models.ImageField(upload_to='logos/', blank=True, null=True  )
     org_description = models.TextField(blank=True)
     password = models.CharField(max_length=128)
 
@@ -46,6 +46,7 @@ class Campaign(models.Model):
     created_at = models.DateTimeField(auto_now_add=True)
     amount_gathered = models.DecimalField(max_digits=10, decimal_places=2, default=0.00)
     category = models.CharField(max_length=255, blank=True, null=True)
+    images = models.ImageField(upload_to='campaign_images/', blank=True, null=True)
 
     def __str__(self):
         return self.title
