@@ -11,17 +11,25 @@ const UserRegister = () => {
     password2: '',
   });
   const [isLoading, setIsLoading] = useState(false);
+  const [error, setError] = useState('');
 
   const handleChange = (e) => {
     const { name, value } = e.target;
     setForm({ ...form, [name]: value });
+    setError(''); // clear error when user changes input
   };
 
   const handleSubmit = async (e) => {
     e.preventDefault();
 
     if (form.password !== form.password2) {
-      alert('Passwords do not match!');
+      setError('Passwords do not match!');
+      return;
+    }
+
+    const passwordRegex = /^(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{6,}$/;
+    if (!passwordRegex.test(form.password)) {
+      setError('Password must include at least one uppercase letter, one number, and one special character.');
       return;
     }
 
@@ -34,11 +42,10 @@ const UserRegister = () => {
     try {
       setIsLoading(true);
       await registerUser(payload);
-      alert('Registration successful!');
       navigate('/user-login');
     } catch (error) {
       console.error('Registration error:', error.response?.data);
-      alert('Registration failed: ' + (error.response?.data?.message || 'Try again.'));
+      setError(error.response?.data?.message || 'Registration failed. Please try again.');
     } finally {
       setIsLoading(false);
     }
@@ -51,9 +58,22 @@ const UserRegister = () => {
     >
       <form
         onSubmit={handleSubmit}
-        className="bg-white bg-opacity-90 p-10 rounded-xl shadow-lg w-full max-w-md backdrop-blur-md"
+        className="bg-white bg-opacity-90 p-10 rounded-xl shadow-lg w-full max-w-md backdrop-blur-md relative"
       >
         <h2 className="text-3xl font-bold mb-6 text-center text-blue-700">Create Your Account</h2>
+
+        {error && (
+          <div className="mb-4 p-3 bg-red-100 border border-red-400 text-red-700 rounded relative">
+            <span>{error}</span>
+            <button
+              type="button"
+              onClick={() => setError('')}
+              className="absolute top-2 right-3 text-red-700 font-bold"
+            >
+              ×
+            </button>
+          </div>
+        )}
 
         <div className="relative mb-4">
           <input

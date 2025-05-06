@@ -20,7 +20,7 @@ const Navbar = () => {
 
   return (
     <nav className="bg-white shadow px-6 py-4 flex justify-between items-center relative">
-      <Link to="/" className="text-xl font-bold text-blue-600">Crowdfund</Link>
+      <Link to="/" className="text-xl font-bold text-#E9A319">Crowdfund</Link>
 
       {isLoggedIn && (
         <div className="relative">

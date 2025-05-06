@@ -23,7 +23,6 @@ const Register = () => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-
     if (form.password !== form.password2) {
       alert('Passwords do not match!');
       return;
@@ -34,14 +33,12 @@ const Register = () => {
     formData.append('contact_email', form.contact_email);
     formData.append('password', form.password);
     formData.append('org_description', form.org_description);
-    if (form.logo) {
-      formData.append('logo', form.logo);
-    }
+    if (form.logo) formData.append('logo', form.logo);
 
     try {
-      await registerOrg(formData); // this should be a POST request with headers set for multipart/form-data
+      await registerOrg(formData);
       alert('Registration successful!');
-      navigate('/login');
+      navigate('/dashboard');
     } catch (error) {
       console.error('Registration error:', error.response?.data);
       alert('Registration failed: ' + (error.response?.data?.message || 'Try again.'));
@@ -49,68 +46,99 @@ const Register = () => {
   };
 
   return (
-    <div className="max-w-md mx-auto mt-10 p-6 border rounded-xl shadow">
-      <h2 className="text-2xl font-bold mb-4 text-center">Organization Register</h2>
-      <form onSubmit={handleSubmit} className="space-y-4" encType="multipart/form-data">
-        <input
-          name="name"
-          placeholder="Organization Name"
-          onChange={handleChange}
-          required
-          className="w-full p-2 border rounded"
-        />
-        <input
-          type="email"
-          name="contact_email"
-          placeholder="Contact Email"
-          onChange={handleChange}
-          required
-          className="w-full p-2 border rounded"
-        />
-        <input
-          type="password"
-          name="password"
-          placeholder="Password"
-          onChange={handleChange}
-          required
-          className="w-full p-2 border rounded"
-        />
-        <input
-          type="password"
-          name="password2"
-          placeholder="Confirm Password"
-          onChange={handleChange}
-          required
-          className="w-full p-2 border rounded"
-        />
-        <textarea
-          name="org_description"
-          placeholder="Organization Description"
-          onChange={handleChange}
-          rows={3}
-          className="w-full p-2 border rounded"
-        />
-        <input
-          type="file"
-          name="logo"
-          accept=".jpg"
-          onChange={handleChange}
-          className="w-full border rounded p-2"
-        />
-        <button
-          type="submit"
-          className="bg-blue-600 text-white py-2 px-4 rounded w-full hover:bg-blue-700"
-        >
-          Register
-        </button>
+    <div
+  className="flex items-center justify-center min-h-screen bg-cover bg-center p-4"
+  style={{
+    backgroundImage: "url('https://images.unsplash.com/photo-1509099836639-18ba1795216d?q=80&w=1931&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D')",
+  }}
+>
 
-        <p className="text-sm text-center mt-4">
+<div className="max-w-md mx-auto mt-10 p-6 border rounded-xl shadow bg-white bg-opacity-20 backdrop-blur-md">
+
+
+        <h2 className="text-3xl font-extrabold text-center text-blue-700 mb-6">
+          Register Your Organization
+        </h2>
+        <form onSubmit={handleSubmit} className="space-y-4" encType="multipart/form-data">
+          <div>
+            <label className="block text-sm font-semibold text-gray-700">Organization Name</label>
+            <input
+              name="name"
+              onChange={handleChange}
+              required
+              className="mt-1 w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring focus:ring-blue-200"
+              placeholder="e.g., Helping Hands"
+            />
+          </div>
+          <div>
+            <label className="block text-sm font-semibold text-gray-700">Contact Email</label>
+            <input
+              type="email"
+              name="contact_email"
+              onChange={handleChange}
+              required
+              className="mt-1 w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring focus:ring-blue-200"
+              placeholder="example@ngo.org"
+            />
+          </div>
+          <div className="grid grid-cols-2 gap-4">
+            <div>
+              <label className="block text-sm font-semibold text-gray-700">Password</label>
+              <input
+                type="password"
+                name="password"
+                onChange={handleChange}
+                required
+                className="mt-1 w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring focus:ring-blue-200"
+                placeholder="••••••••"
+              />
+            </div>
+            <div>
+              <label className="block text-sm font-semibold text-gray-700">Confirm Password</label>
+              <input
+                type="password"
+                name="password2"
+                onChange={handleChange}
+                required
+                className="mt-1 w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring focus:ring-blue-200"
+                placeholder="••••••••"
+              />
+            </div>
+          </div>
+          <div>
+            <label className="block text-sm font-semibold text-gray-700">Organization Description</label>
+            <textarea
+              name="org_description"
+              rows={3}
+              onChange={handleChange}
+              className="mt-1 w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring focus:ring-blue-200"
+              placeholder="Tell us about your mission"
+            />
+          </div>
+          <div>
+            <label className="block text-sm font-semibold text-gray-700">Upload Logo (.jpg)</label>
+            <input
+              type="file"
+              name="logo"
+              accept=".jpg"
+              onChange={handleChange}
+              className="mt-1 w-full text-sm border border-gray-300 rounded-lg p-2"
+            />
+          </div>
+          <button
+            type="submit"
+            className="w-full py-3 mt-4 bg-blue-600 text-white font-semibold rounded-lg hover:bg-blue-700 transition"
+          >
+            Register
+          </button>
+        </form>
+        <p className="text-center text-sm text-gray-600 mt-4">
           Already have an account?{' '}
-          <Link to="/login" className="text-blue-600 hover:underline">
+          <Link to="/login" className="text-blue-700 hover:underline">
             Login here
           </Link>
         </p>
-      </form>
+      </div>
     </div>
   );
 };
