@@ -11,6 +11,7 @@ const PasswordReset = () => {
 
   // Determine if this is donor or organization
   useEffect(() => {
+    console.log("Current path:", location.pathname);
     if (location.pathname === '/login') {
       setUser('organization');
     } else if (location.pathname === '/user-login') {
@@ -34,7 +35,6 @@ const PasswordReset = () => {
       });
 
       setMessage('OTP sent to your email. Please check and proceed.');
-      // Navigate to OTP verification + password reset form with state
       navigate('/verify-otp', { state: { email, user } });
     } catch (error) {
       console.error('Reset failed:', error);
@@ -43,14 +43,14 @@ const PasswordReset = () => {
   };
 
   return (
-    <div className="min-h-screen flex items-center justify-center bg-gray-100">
-      <form onSubmit={handleReset} className="bg-white p-8 rounded-lg shadow w-full max-w-md">
-        <h2 className="text-2xl font-semibold mb-4 text-center text-blue-700">Reset Your Password</h2>
+    <div className="min-h-screen flex items-center justify-center bg-gradient-to-br from-blue-100 to-blue-50 py-10">
+      <form onSubmit={handleReset} className="bg-white p-10 rounded-2xl shadow-lg w-full max-w-lg">
+        <h2 className="text-3xl font-bold mb-6 text-center text-blue-800">Reset Your Password</h2>
 
         <input
           type="email"
           placeholder="Enter your email"
-          className="w-full px-4 py-3 border rounded mb-4"
+          className="w-full px-4 py-3 border rounded-lg mb-4 focus:outline-none focus:ring-2 focus:ring-blue-500"
           value={email}
           onChange={(e) => setEmail(e.target.value)}
           required
@@ -58,13 +58,13 @@ const PasswordReset = () => {
 
         <button
           type="submit"
-          className="w-full bg-blue-600 text-white py-2 rounded hover:bg-blue-700"
+          className="w-full bg-blue-600 text-white py-3 rounded-lg font-semibold hover:bg-blue-700 transition-all"
         >
           Send OTP
         </button>
 
         {message && (
-          <p className="text-center text-sm text-gray-700 mt-4">{message}</p>
+          <p className="text-center text-sm text-blue-700 mt-6 animate-pulse">{message}</p>
         )}
       </form>
     </div>

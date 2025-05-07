@@ -246,3 +246,11 @@ MEDIA_ROOT = os.path.join( BASE_DIR,  'media')
 
 MAX_UPLOAD_SIZE = 5 * 1024 * 1024  # 5MB
 ALLOWED_IMAGE_EXTENSIONS = ['.jpg', '.jpeg', '.png']
+
+
+import tempfile
+import sys
+# Test-specific settings
+if 'test' in sys.argv:
+    MEDIA_ROOT = tempfile.mkdtemp()
+    DEFAULT_FILE_STORAGE = 'django.core.files.storage.FileSystemStorage'

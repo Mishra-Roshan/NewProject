@@ -1,6 +1,6 @@
 from rest_framework import serializers
-from .models import Organization
-from .models import Campaign
+from .models import Organization,Campaign,OrgReview
+ 
 
 
 # Serializer for Organization model
@@ -29,7 +29,7 @@ class PasswordResetSerializer(serializers.Serializer):
 class CampaignSerializer(serializers.ModelSerializer):
     
     organization_name = serializers.CharField(source='organization.name', read_only=True)
-
+    image_url = serializers.SerializerMethodField()
  
 
    
@@ -48,11 +48,34 @@ class CampaignSerializer(serializers.ModelSerializer):
             'amount_gathered',
             'organization_name',
             'images',
+            'image_url',
              
         ]
         read_only_fields = ['id', 'created_at']
 
+    def get_image_url(self, obj):
+        if obj.images:
+            request = self.context.get('request')
+            if request:
+                return request.build_absolute_uri(obj.images.url)
+        return None
+
+    def create(self, validated_data):
+        images = validated_data.pop('images', None)
+        campaign = Campaign.objects.create(**validated_data)
+        if images:
+            campaign.images = images
+            campaign.save()
+        return campaign
+
      
 
    
+class OrgReviewSerializer(serializers.ModelSerializer):
+    organization_name = serializers.CharField(source='organization.name', read_only=True)
+
+    class Meta:
+        model = OrgReview
+        fields = ['id', 'organization_name', 'review_text', 'created_at', 'rating']
+        read_only_fields = ['id', 'organization_name', 'created_at']
 

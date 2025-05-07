@@ -18,7 +18,7 @@ import CreateCampaign from './pages/organization/CreateCampaign.jsx';
 import Navbar from './components/auth/layout/Navbar.jsx';
 import PasswordReset from './components/auth/PasswordReset.jsx';
 import VerifyOtpResetPassword from './components/auth/VerifyOtpResetPassword.jsx';
-import ReceiptModal from './pages/organization/ReceiptModal.jsx';
+ 
 
 
 export default function AppRouter() {
@@ -45,7 +45,7 @@ export default function AppRouter() {
         <Route path="/create-campaign" element={<CreateCampaign />} />
         <Route path="/user-forgot-password" element={<PasswordReset />} />
         <Route path="/verify-otp" element = {< VerifyOtpResetPassword/>} />
-        
+       
 
         
         <Route path="/dashboard" element={

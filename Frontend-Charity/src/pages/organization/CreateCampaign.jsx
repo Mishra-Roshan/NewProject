@@ -27,7 +27,7 @@ const CreateCampaign = () => {
         deadline: editingCampaign?.deadline ? editingCampaign.deadline.split('T')[0] : '',
         category: editingCampaign?.category || 'Education',
         status: editingCampaign?.status || 'active',
-        image: editingCampaign?.images || null,
+        images: editingCampaign?.images || null,
       });
     }
   }, [editingCampaign]);
@@ -39,7 +39,7 @@ const CreateCampaign = () => {
 
   const handleImageChange = (e) => {
     const file = e.target.files[0];
-    setForm((prev) => ({ ...prev, image: file }));
+    setForm((prev) => ({ ...prev, images: file }));
   };
 
   const handleSubmit = async (e) => {
@@ -164,7 +164,7 @@ const CreateCampaign = () => {
           {/* Image Input */}
           <input
             type="file"
-            name="image"
+            name="images"
             onChange={handleImageChange}
             className="w-full p-3 border rounded bg-white/30"
           />

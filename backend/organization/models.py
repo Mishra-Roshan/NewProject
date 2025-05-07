@@ -2,6 +2,9 @@
 
 from django.db import models
 from django.contrib.auth.models import AbstractBaseUser, BaseUserManager
+from django.core.validators import FileExtensionValidator
+import uuid
+import os
 
 class OrganizationManager(BaseUserManager):
     def create_user(self, contact_email, name, password=None, **extra_fields):
@@ -29,6 +32,11 @@ class Organization(AbstractBaseUser):
     def __str__(self):
         return self.name
     
+
+def campaign_image_path(instance, filename):
+    ext =  os.path.splitext(filename)[1]
+    return f'campaign_images/{uuid.uuid4()}.{ext}'   
+
 #campaign model
 class Campaign(models.Model):
     STATUS_CHOICES = [
@@ -46,7 +54,32 @@ class Campaign(models.Model):
     created_at = models.DateTimeField(auto_now_add=True)
     amount_gathered = models.DecimalField(max_digits=10, decimal_places=2, default=0.00)
     category = models.CharField(max_length=255, blank=True, null=True)
-    images = models.ImageField(upload_to='campaign_images/', blank=True, null=True)
+    images = models.ImageField(
+        upload_to=campaign_image_path,
+        blank=True, 
+        null=True,
+        validators=[FileExtensionValidator(['jpg', 'jpeg', 'png'])]
+    )
 
+
+    def save(self, *args, **kwargs):
+        if self.pk:  # If updating existing instance
+            try:
+                old_instance = Campaign.objects.get(pk=self.pk)
+                if old_instance.images and self.images != old_instance.images:
+                    old_instance.images.delete(save=False)
+            except Campaign.DoesNotExist:
+                pass
+        super().save(*args, **kwargs)
     def __str__(self):
         return self.title
+
+class OrgReview(models.Model):
+    organization = models.ForeignKey(Organization, on_delete=models.CASCADE, related_name='reviews')
+    review_text = models.TextField()
+    created_at = models.DateTimeField(auto_now_add=True)
+    rating = models.PositiveSmallIntegerField(default=5)  # Optional: rating from 1 to 5
+
+    def __str__(self):
+        return f"Review by {self.organization.name}"
+

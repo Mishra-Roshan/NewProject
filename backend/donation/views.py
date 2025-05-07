@@ -8,8 +8,7 @@ from rest_framework.views import APIView
 from rest_framework import status
 from rest_framework.permissions import AllowAny
 from .serializers import DonationSerializer
-from organization.serializers import CampaignSerializer 
-from organization.models import Campaign
+ 
 
 # Razorpay client setup
 razorpay_client = razorpay.Client(auth=(settings.RAZORPAY_KEY_ID, settings.RAZORPAY_KEY_SECRET))
@@ -66,7 +65,7 @@ class VerifyPaymentView(APIView):
             )
 
             if donation.status != 'paid':  # Avoid double counting
-                donation.status = 'paid'
+                donation.status = 'paid'.capitalize()
                 donation.save()
 
                 # Update the campaign's gathered amount
@@ -96,11 +95,4 @@ class VerifyPaymentView(APIView):
         
 
 #for fetching donation only for the particular user
-class UserDonationListView(generics.ListAPIView):
-    serializer_class = CampaignSerializer  # ✅ Use CampaignSerializer now
-    permission_classes = [permissions.IsAuthenticated]
-
-    def get_queryset(self):
-        return Campaign.objects.filter(
-            donations__user=self.request.user
-        ).distinct()
+ 

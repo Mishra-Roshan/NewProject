@@ -38,7 +38,7 @@ const Register = () => {
     try {
       await registerOrg(formData);
       alert('Registration successful!');
-      navigate('/dashboard');
+      navigate('/campaigns');
     } catch (error) {
       console.error('Registration error:', error.response?.data);
       alert('Registration failed: ' + (error.response?.data?.message || 'Try again.'));

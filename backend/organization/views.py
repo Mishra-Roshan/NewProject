@@ -9,8 +9,11 @@ from django.contrib.auth import authenticate
 from rest_framework import status as drf_status
 from rest_framework import viewsets, permissions
 
-from .models import Campaign, Organization
+from .models import Campaign, Organization,OrgReview
 from rest_framework import serializers
+from .serializers import CampaignSerializer,OrgReviewSerializer
+from rest_framework import viewsets
+from rest_framework.parsers import MultiPartParser, FormParser
 
 
 #register view for organization
@@ -65,9 +68,10 @@ class PublicCampaignListView(generics.ListAPIView):
     
 #campaign viewset       
 class CampaignViewSet(viewsets.ModelViewSet):
-  
+    queryset = Campaign.objects.all()
     serializer_class = CampaignSerializer
     permission_classes = [permissions.IsAuthenticated]  
+    parser_classes = (MultiPartParser, FormParser)
 
     #for getting the organization email from the token
     # This method extracts the organization email from the JWT token in the request headers.
@@ -105,6 +109,9 @@ class CampaignViewSet(viewsets.ModelViewSet):
 
         try:
             organization = Organization.objects.get(contact_email= self.get_organization_email())
+           
+            print("Files in request:", self.request.FILES)
+            print("Data in request:", self.request.data)
             serializer.save(organization=organization)
         except Organization.DoesNotExist:
             raise serializers.ValidationError({"organization": "No matching organization for this user."})
@@ -120,6 +127,8 @@ class CampaignViewSet(viewsets.ModelViewSet):
 
         try:
             organization = Organization.objects.get(contact_email=self.get_organization_email())
+            print("Files in request:", self.request.FILES)
+            print("Data in request:", self.request.data)
         except Organization.DoesNotExist:
             raise serializers.ValidationError({"organization": "No matching organization for this user."})
 
@@ -130,13 +139,46 @@ class CampaignViewSet(viewsets.ModelViewSet):
         serializer.save()
 
 
+#for review by organizations
+class OrgReviewViewSet(viewsets.ModelViewSet):
+    queryset = OrgReview.objects.all().order_by('-created_at')  # Optional: latest first
+    serializer_class = OrgReviewSerializer
+    permission_classes = [permissions.IsAuthenticatedOrReadOnly]
 
-
-
-
-
+    def get_organization_email(self):
+        print("Running")
+        auth_header = self.request.headers.get('Authorization')
+        if not auth_header:
+            return None
         
+        token_str = auth_header.split(' ')[1]
+        access_token = AccessToken(token_str)
+        organiztion_email = access_token.get('organization_email', None)
+        print(organiztion_email)
+        return  organiztion_email
+    
 
+    def get_queryset(self):
+        """
+        Return only the reviews of the authenticated user's organization
+        if the user is authenticated. If the user is not authenticated,
+        return all reviews (for read-only access).
+        """
+        if self.request.user.is_authenticated:
+            organization_email = self.get_organization_email()
+            return OrgReview.objects.filter(organization__contact_email=organization_email)
+        return OrgReview.objects.all()  # Allow read-only access f
 
+    def perform_create(self, serializer):
+        user = self.request.user
 
-       
+        if not user.is_authenticated:
+            raise serializers.ValidationError({"detail": "Authentication required to post a review."})
+
+        try:
+            organization = Organization.objects.get(contact_email=self.get_organization_email())
+            serializer.save(organization=organization)
+        except Organization.DoesNotExist:
+            raise serializers.ValidationError({"organization": "Only registered organizations can post reviews."})
+        
+     

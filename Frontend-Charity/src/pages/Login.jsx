@@ -31,9 +31,7 @@ const Login = () => {
     }
   };
 
-  // Decide reset path based on role
-  const resetPath = role === 'organization' ? '/login' : '/user-login';
-
+  // Decide reset path based on role 
   return (
     <div
       className="min-h-screen flex items-center justify-center bg-cover bg-center"
