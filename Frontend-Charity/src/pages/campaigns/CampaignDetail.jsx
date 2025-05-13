@@ -55,6 +55,27 @@ const CampaignView = () => {
     }
   };
 
+  const handleReviewSubmit = async () => {
+    if (!reviewText.trim() || rating === 0) {
+      alert('Please provide a review and a rating.');
+      return;
+    }
+
+    try {
+      const token = localStorage.getItem('accessToken');
+      await axios.post(
+        'http://localhost:8000/org/auth/camp/review/',
+        { review_text: reviewText, rating },
+        { headers: { Authorization: `Bearer ${token}` } }
+      );
+      alert('Review submitted successfully!');
+      fetchReview(); // Refresh to show the submitted review
+    } catch (err) {
+      console.error('Error submitting review:', err);
+      alert('Failed to submit review.');
+    }
+  };
+
   // Navigate to update the campaign
   const handleUpdate = (campaign) => {
     navigate('/create-campaign', { state: { campaign } });
@@ -126,14 +147,51 @@ const CampaignView = () => {
           ))}
         </div>
       </div>
+      <div className="mt-12 p-6 bg-gray-100 rounded-lg shadow-md">
+      {existingReview && existingReview.length > 0 ? (
+        <div>
+          <p className="text-2xl font-semibold mb-4">Your Review:</p>
+          <p>{existingReview[0].review_text}</p>
+          <p>Rating: {existingReview[0].rating} / 5</p>
+        </div>
+      ) : (
+        <div>
+          <h2 className="text-2xl font-semibold mb-4">Leave a Review About the Platform</h2>
+          <textarea
+            value={reviewText}
+            onChange={(e) => setReviewText(e.target.value)}
+            placeholder="Share your experience..."
+            rows={4}
+            className="w-full p-3 border rounded-md mb-4"
+          />
+          <div className="flex items-center mb-4">
+            {[1, 2, 3, 4, 5].map((star) => (
+              <button
+                key={star}
+                onClick={() => setRating(star)}
+                className={`text-2xl ${rating >= star ? 'text-yellow-400' : 'text-gray-300'}`}
+              >
+                ★
+              </button>
+            ))}
+          </div>
+          <button
+            onClick={handleReviewSubmit}
+            className="bg-blue-600 text-white px-6 py-3 rounded-md"
+          >
+            Submit Review
+          </button>
+        </div>
+      )}
     </div>
+  </div>
   );
 };
 
 const CampaignCard = ({ campaign, onUpdate, onDelete }) => {
   const { id, title, description, goal_amount, amount_gathered, deadline, image_url } = campaign;
-  const progress = Math.min((amount_gathered / parseFloat(goal_amount)) * 100, 100);
-
+  const progress = goal_amount ? Math.min((amount_gathered / parseFloat(goal_amount)) * 100, 100) : 0;
+  
   return (
     <div className="bg-white shadow-lg rounded-lg overflow-hidden transition-all transform hover:scale-105 hover:shadow-2xl">
       {image_url && <img src={image_url} alt={title} className="w-full h-40 object-cover rounded-t-lg" />}
@@ -164,7 +222,9 @@ const CampaignCard = ({ campaign, onUpdate, onDelete }) => {
         </div>
       </div>
     </div>
-  );
-};
+  )};
+
+   
+
 
 export default CampaignView;
