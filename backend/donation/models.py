@@ -2,6 +2,7 @@
 from django.db import models
 from django.contrib.auth.models import User
 from organization.models import Campaign
+from django.core.exceptions import ValidationError
 
 class Donation(models.Model):
     STATUS_CHOICES = [
@@ -17,7 +18,18 @@ class Donation(models.Model):
     status = models.CharField(max_length=10, choices=STATUS_CHOICES, default='created')
     transaction_id = models.CharField(max_length=100, null=True, blank=True)
 
+    def clean(self):
+        if self.status == 'paid':
+            current_amount = self.campaign.amount_gathered
+            goal_amount = self.campaign.goal_amount
+            
+            if current_amount + self.amount > goal_amount:
+                raise ValidationError({
+                    'amount': f'Campaign goal of {goal_amount} would be exceeded. Only {goal_amount - current_amount} can be donated.'
+                })
+
     def save(self, *args, **kwargs):
+        self.clean()
         is_new = self.pk is None
         super().save(*args, **kwargs)
         if is_new and self.status == 'paid':

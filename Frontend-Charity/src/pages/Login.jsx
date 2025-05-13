@@ -16,13 +16,15 @@ const Login = () => {
         password,
       });
 
-      const { access, refresh } = response.data;
+      const { access, refresh,name,logo_url } = response.data;
 
       localStorage.setItem('accessToken', access);
       localStorage.setItem('refreshToken', refresh);
+      localStorage.setItem('organization_name',name);
+      localStorage.setItem('organization_logo',logo_url);
       localStorage.setItem('isLoggedIn', 'true');
 
-      navigate('/campaigns');
+      navigate('/org-dashboard');
     } catch (error) {
       console.error('Login failed:', error);
       const errorMsg =

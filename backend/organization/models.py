@@ -2,7 +2,7 @@
 
 from django.db import models
 from django.contrib.auth.models import AbstractBaseUser, BaseUserManager
-from django.core.validators import FileExtensionValidator
+from django.core.validators import FileExtensionValidator,MinValueValidator
 import uuid
 import os
 
@@ -48,7 +48,7 @@ class Campaign(models.Model):
     organization = models.ForeignKey('Organization', on_delete=models.CASCADE, related_name='campaigns')
     title = models.CharField(max_length=255)
     description = models.TextField()
-    goal_amount = models.DecimalField(max_digits=10, decimal_places=2)
+    goal_amount = models.DecimalField(max_digits=10, decimal_places=2, validators=[MinValueValidator(0.00, message="Goal amount must be greater than 0")])
     status = models.CharField(max_length=20, choices=STATUS_CHOICES, default='draft')
     deadline = models.DateTimeField()
     created_at = models.DateTimeField(auto_now_add=True)
@@ -63,6 +63,11 @@ class Campaign(models.Model):
 
 
     def save(self, *args, **kwargs):
+        if self.amount_gathered >= self.goal_amount:
+            self.status = 'completed'
+            raise ValueError("Amount gathered cannot exceed the goal amount.")
+        if self.amount_gathered < self.goal_amount and self.status == 'completed':
+            self.status = 'active'
         if self.pk:  # If updating existing instance
             try:
                 old_instance = Campaign.objects.get(pk=self.pk)

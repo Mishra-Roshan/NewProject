@@ -7,6 +7,8 @@ const CreateCampaign = () => {
   const location = useLocation();
   const editingCampaign = location.state?.campaign || null;
 
+  const [amountError, setAmountError] = useState('');
+
   const [form, setForm] = useState({
     title: editingCampaign?.title || '',
     description: editingCampaign?.description || '',
@@ -14,7 +16,7 @@ const CreateCampaign = () => {
     deadline: editingCampaign?.deadline ? editingCampaign.deadline.split('T')[0] : '',
     category: editingCampaign?.category || 'Education',
     status: editingCampaign?.status || 'active',
-    image: editingCampaign?.images || null,  // Use images for initial image
+    images: editingCampaign?.images || null,
   });
 
   // Update form state if editingCampaign changes
@@ -34,6 +36,16 @@ const CreateCampaign = () => {
 
   const handleChange = (e) => {
     const { name, value } = e.target;
+
+    if (name === 'goal_amount') {
+      // Prevent negative amounts
+      if (value === '-' || parseFloat(value) < 0) {
+        setAmountError('Amount cannot be negative');
+      } else {
+        setAmountError('');
+      }
+    }
+
     setForm((prev) => ({ ...prev, [name]: value }));
   };
 
@@ -44,23 +56,25 @@ const CreateCampaign = () => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    const token = localStorage.getItem('accessToken');
 
+    // Block submission if the amount is negative
+    if (amountError || parseFloat(form.goal_amount) < 0 || form.goal_amount === '-') {
+      setAmountError('Amount cannot be negative');
+      return;
+    }
+
+    const token = localStorage.getItem('accessToken');
     const formData = new FormData();
+
     // Append all form values to FormData
-    
     for (let key in form) {
-      if (key === 'image' && form[key] === editingCampaign?.images) {
+      if (key === 'images' && form[key] === editingCampaign?.images) {
         // Skip appending the image if it's not changed
         continue;
       }
       formData.append(key, form[key]);
     }
 
-    for (let pair of formData.entries()) {
-      console.log(`${pair[0]}:`, pair[1]);
-    }
-     
     try {
       if (editingCampaign) {
         await axios.patch(`http://localhost:8000/org/auth/camp/campaigns/${editingCampaign.id}/`, formData, {
@@ -108,7 +122,7 @@ const CreateCampaign = () => {
             value={form.title}
             onChange={handleChange}
             required
-            className="w-full p-3 border rounded bg-white/30  placeholder-black"
+            className="w-full p-3 border rounded bg-white/30 placeholder-black"
           />
           <textarea
             name="description"
@@ -116,17 +130,23 @@ const CreateCampaign = () => {
             value={form.description}
             onChange={handleChange}
             required
-            className="w-full p-3 border rounded h-32 bg-white/30  placeholder-black"
+            className="w-full p-3 border rounded h-32 bg-white/30 placeholder-black"
           />
-          <input
-            type="number"
-            name="goal_amount"
-            placeholder="Goal Amount (in RS)"
-            value={form.goal_amount}
-            onChange={handleChange}
-            required
-            className="w-full p-3 border rounded bg-white/30  placeholder-black"
-          />
+          
+          {/* Goal Amount Input with Inline Warning */}
+          <div>
+            <input
+              type="number"
+              name="goal_amount"
+              placeholder="Goal Amount (in RS)"
+              value={form.goal_amount}
+              onChange={handleChange}
+              required
+              className={`w-full p-3 border rounded bg-white/30 placeholder-black ${amountError ? 'border-red-500' : ''}`}
+            />
+            {amountError && <p className="text-red-500 text-sm mt-1">{amountError}</p>}
+          </div>
+
           <input
             type="date"
             name="deadline"
@@ -134,14 +154,14 @@ const CreateCampaign = () => {
             onChange={handleChange}
             required
             placeholder="Deadline"
-            className="w-full p-3 border rounded bg-white/30  placeholder-black"
+            className="w-full p-3 border rounded bg-white/30 placeholder-black"
           />
           <select
             name="category"
             value={form.category}
             onChange={handleChange}
             required
-            className="w-full p-3 border rounded bg-white/30  text-black"
+            className="w-full p-3 border rounded bg-white/30 text-black"
           >
             <option value="Education">Education</option>
             <option value="Disaster">Disaster Relief</option>
@@ -153,7 +173,7 @@ const CreateCampaign = () => {
             value={form.status}
             onChange={handleChange}
             required
-            className="w-full p-3 border rounded bg-white/30  text-black"
+            className="w-full p-3 border rounded bg-white/30 text-black"
           >
             <option value="Active">Active</option>
             <option value="Completed">Completed</option>
@@ -171,7 +191,10 @@ const CreateCampaign = () => {
 
           <button
             type="submit"
-            className="bg-blue-600 hover:bg-blue-700 text-black w-full py-3 px-4 rounded-lg transition"
+            disabled={amountError !== ''}
+            className={`bg-blue-600 hover:bg-blue-700 text-black w-full py-3 px-4 rounded-lg transition ${
+              amountError ? 'opacity-50 cursor-not-allowed' : ''
+            }`}
           >
             {editingCampaign ? 'Update Campaign' : 'Create Campaign'}
           </button>

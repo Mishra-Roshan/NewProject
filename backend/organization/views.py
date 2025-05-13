@@ -3,7 +3,7 @@ from django.shortcuts import render
 from rest_framework.views import APIView
 from rest_framework.response import Response
 from rest_framework import status,generics
-from .serializers import OrganizationRegisterSerializer,CampaignSerializer
+from .serializers import OrganizationRegisterSerializer,CampaignSerializer,OrgReviewSerializer ,OrganizationLoginSerializer
 from rest_framework_simplejwt.tokens import RefreshToken,AccessToken
 from django.contrib.auth import authenticate
 from rest_framework import status as drf_status
@@ -11,7 +11,7 @@ from rest_framework import viewsets, permissions
 
 from .models import Campaign, Organization,OrgReview
 from rest_framework import serializers
-from .serializers import CampaignSerializer,OrgReviewSerializer
+ 
 from rest_framework import viewsets
 from rest_framework.parsers import MultiPartParser, FormParser
 
@@ -32,30 +32,20 @@ class RegisterUser(APIView):
 # This view handles the login of organizations. It authenticates the user using the email and password, and if successful, it generates a JWT token.
 class LoginView(APIView):
     def post(self, request):
-        email = request.data.get("email")  
-        password = request.data.get("password")
-
-        user = authenticate(request, email=email, password=password)
-        print(user)
-    
-        if user:
-            try:
-                organization = Organization.objects.get(contact_email=email)
-            except Organization.DoesNotExist:
-                return Response({'detail': 'Organization not found for this email.'}, status=status.HTTP_404_NOT_FOUND)
-            
-            
-            refresh = RefreshToken.for_user(user)
-            refresh['organization_email'] = email
-          
-
+        serializer = OrganizationLoginSerializer(data=request.data, context={'request': request})
+        if serializer.is_valid():
+            org = Organization.objects.get(contact_email=serializer.validated_data['email'])
+            organization_email =serializer.validated_data.get('email')
+            refresh = RefreshToken.for_user(org)
+            refresh['organization_email'] = organization_email
             return Response({
                 'access': str(refresh.access_token),
                 'refresh': str(refresh),
-                'organization_email': email,
-            }, status=status.HTTP_200_OK)
-        else:
-            return Response({'detail': 'Invalid credentials'}, status=status.HTTP_400_BAD_REQUEST)
+                'name': org.name,
+                'email': org.contact_email,
+                'logo_url': serializer.validated_data.get('logo_url')
+            })
+        return Response(serializer.errors, status=400)
         
 
 class PublicCampaignListView(generics.ListAPIView):
@@ -76,7 +66,6 @@ class CampaignViewSet(viewsets.ModelViewSet):
     #for getting the organization email from the token
     # This method extracts the organization email from the JWT token in the request headers.
     def get_organization_email(self):
-        print("Running")
         auth_header = self.request.headers.get('Authorization')
         if not auth_header:
             return None
@@ -84,16 +73,14 @@ class CampaignViewSet(viewsets.ModelViewSet):
         token_str = auth_header.split(' ')[1]
         access_token = AccessToken(token_str)
         organiztion_email = access_token.get('organization_email', None)
-        print(organiztion_email)
         return  organiztion_email
     
 
 
     #for fetching campaigns
     def get_queryset(self):
-        print("Running")
         contact_email = self.get_organization_email()
-     
+
         if contact_email:
             return Campaign.objects.filter(organization__contact_email=contact_email)
         return Campaign.objects.all()
@@ -110,8 +97,6 @@ class CampaignViewSet(viewsets.ModelViewSet):
         try:
             organization = Organization.objects.get(contact_email= self.get_organization_email())
            
-            print("Files in request:", self.request.FILES)
-            print("Data in request:", self.request.data)
             serializer.save(organization=organization)
         except Organization.DoesNotExist:
             raise serializers.ValidationError({"organization": "No matching organization for this user."})
@@ -127,8 +112,7 @@ class CampaignViewSet(viewsets.ModelViewSet):
 
         try:
             organization = Organization.objects.get(contact_email=self.get_organization_email())
-            print("Files in request:", self.request.FILES)
-            print("Data in request:", self.request.data)
+            
         except Organization.DoesNotExist:
             raise serializers.ValidationError({"organization": "No matching organization for this user."})
 
@@ -146,7 +130,7 @@ class OrgReviewViewSet(viewsets.ModelViewSet):
     permission_classes = [permissions.IsAuthenticatedOrReadOnly]
 
     def get_organization_email(self):
-        print("Running")
+        
         auth_header = self.request.headers.get('Authorization')
         if not auth_header:
             return None
@@ -154,7 +138,7 @@ class OrgReviewViewSet(viewsets.ModelViewSet):
         token_str = auth_header.split(' ')[1]
         access_token = AccessToken(token_str)
         organiztion_email = access_token.get('organization_email', None)
-        print(organiztion_email)
+       
         return  organiztion_email
     
 

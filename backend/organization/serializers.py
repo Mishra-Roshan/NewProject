@@ -16,6 +16,34 @@ class OrganizationRegisterSerializer(serializers.ModelSerializer):
         return Organization.objects.create_user(**validated_data)
 
 
+# Serializer for Organization login i.e. response to be send after login
+class OrganizationLoginSerializer(serializers.Serializer):
+    email = serializers.EmailField()
+    password = serializers.CharField(write_only=True)
+    name = serializers.CharField(read_only=True)
+    logo_url = serializers.SerializerMethodField(read_only=True)
+
+    def get_logo_url(self, obj):
+        if obj.logo:
+            request = self.context.get('request')
+            if request:
+                return request.build_absolute_uri(obj.logo.url)
+        return None
+
+    def validate(self, data):
+        email = data.get('email')
+        password = data.get('password')
+
+        if email and password:
+            org = Organization.objects.filter(contact_email=email).first()
+            if org and org.check_password(password):
+                # Add organization details to validated data
+                data['name'] = org.name
+                data['logo_url'] = self.get_logo_url(org)
+                return data
+            raise serializers.ValidationError("Invalid credentials")
+        raise serializers.ValidationError("Must include 'email' and 'password'")
+
 #saving new password after reset
 class PasswordResetSerializer(serializers.Serializer):
     email = serializers.EmailField()

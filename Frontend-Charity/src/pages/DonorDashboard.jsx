@@ -1,26 +1,39 @@
 import React, { useState, useEffect } from 'react';
 import ReceiptModal from './organization/ReceiptModal';
-import { CheckCircleIcon } from '@heroicons/react/24/solid';
 
 const DonorDashboard = () => {
   const [amount, setAmount] = useState(500);
   const [receiptData, setReceiptData] = useState(null);
   const [showReceipt, setShowReceipt] = useState(false);
   const [loading, setLoading] = useState(false);
+  const [maxAmount, setMaxAmount] = useState(null);
 
   useEffect(() => {
     const script = document.createElement("script");
     script.src = "https://checkout.razorpay.com/v1/checkout.js";
     script.async = true;
     document.body.appendChild(script);
+
+    // Get the campaign details from localStorage
+    const goalAmount = parseFloat(localStorage.getItem('campaignGoalAmount')) || 0;
+    const amountGathered = parseFloat(localStorage.getItem('campaignAmountGathered')) || 0;
+    const remainingAmount = goalAmount - amountGathered;
+
+    // Set the max donation amount
+    setMaxAmount(remainingAmount);
+
+    // Set default amount to 500 or remaining amount if less than 500
+    setAmount(remainingAmount < 500 && remainingAmount > 0 ? remainingAmount : 500);
   }, []);
 
-  const handleAmountChange = (e) => setAmount(e.target.value);
+  const handleAmountChange = (e) => {
+    const enteredAmount = parseFloat(e.target.value) || 0;
+    setAmount(enteredAmount);
+  };
 
   const handlePayment = async () => {
     const campaignID = localStorage.getItem('selectedCampaignId');
-    if (!campaignID) return alert("No campaign selected.");
-    if (amount <= 0 || isNaN(amount)) return alert("Enter valid amount.");
+    if (!campaignID || amount <= 0 || amount > maxAmount || isNaN(amount)) return;
 
     try {
       setLoading(true);
@@ -35,7 +48,6 @@ const DonorDashboard = () => {
 
       const data = await res.json();
       if (!data.razorpay_key) {
-        alert("Razorpay key missing.");
         setLoading(false);
         return;
       }
@@ -61,17 +73,13 @@ const DonorDashboard = () => {
             });
 
             const verifyData = await verifyRes.json();
-            console.log("Response data", verifyData);
 
             if (verifyRes.ok && verifyData.receipt) {
               setReceiptData(verifyData.receipt);
               setShowReceipt(true);
-            } else {
-              alert('Payment verified but receipt missing or verification failed.');
             }
           } catch (err) {
             console.error("Verification error", err);
-            alert("Verification error");
           } finally {
             setLoading(false);
           }
@@ -83,7 +91,6 @@ const DonorDashboard = () => {
       rzp.open();
     } catch (error) {
       console.error('Payment error:', error);
-      alert('Error while initiating payment.');
       setLoading(false);
     }
   };
@@ -108,6 +115,7 @@ const DonorDashboard = () => {
             value={amount}
             onChange={handleAmountChange}
             min="1"
+            max={maxAmount}
             className="w-full p-3 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-green-400"
             placeholder="Enter Donation Amount"
           />
@@ -116,13 +124,25 @@ const DonorDashboard = () => {
         <div className="flex justify-center">
           <button
             onClick={handlePayment}
-            disabled={loading}
+            disabled={loading || amount > maxAmount || amount <= 0}
             className={`px-6 py-3 text-white font-semibold rounded-xl shadow-md transition-all duration-200 
-              ${loading ? 'bg-green-300 cursor-not-allowed' : 'bg-green-600 hover:bg-green-700'}`}
+              ${loading || amount > maxAmount || amount <= 0 ? 'bg-green-300 cursor-not-allowed' : 'bg-green-600 hover:bg-green-700'}`}
           >
             {loading ? 'Processing...' : `Donate ₹${amount}`}
           </button>
         </div>
+
+        {maxAmount !== null && maxAmount > 0 && (
+          <div className="mt-4 text-center text-sm text-gray-500">
+            You can donate a maximum of ₹{maxAmount} to this campaign.
+          </div>
+        )}
+
+        {maxAmount === 0 && (
+          <div className="mt-4 text-center text-sm text-red-500">
+            This campaign has already reached its funding goal. Thank you for your support!
+          </div>
+        )}
 
         <div className="mt-8 text-center text-sm text-gray-500">
           Secure payments powered by Razorpay

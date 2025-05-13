@@ -4,7 +4,8 @@ import axios from 'axios';
 
 const DemoCampaign = () => {
   const navigate = useNavigate();
-  const [campaigns, setCampaigns] = useState([]);
+  const [activeCampaigns, setActiveCampaigns] = useState([]);
+  const [completedCampaigns, setCompletedCampaigns] = useState([]);
   const [loading, setLoading] = useState(true);
   const [selectedCampaign, setSelectedCampaign] = useState(null);
 
@@ -14,13 +15,23 @@ const DemoCampaign = () => {
         const response = await axios.get('http://127.0.0.1:8000/org/auth/view-campaigns/');
         const currentDate = new Date();
 
-        const filteredCampaigns = response.data.filter(
-          (campaign) =>
-            campaign.status === 'active' &&
-            new Date(campaign.deadline) > currentDate
-        );
+        const active = [];
+        const completed = [];
 
-        setCampaigns(filteredCampaigns);
+        response.data.forEach((campaign) => {
+          const raisedAmount = parseFloat(campaign.amount_gathered) || 0;
+          const goalAmount = parseFloat(campaign.goal_amount) || 0;
+          const deadlinePassed = new Date(campaign.deadline) <= currentDate;
+
+          if (raisedAmount >= goalAmount || campaign.status === 'completed') {
+            completed.push(campaign);
+          } else if (campaign.status === 'active' && !deadlinePassed) {
+            active.push(campaign);
+          }
+        });
+
+        setActiveCampaigns(active);
+        setCompletedCampaigns(completed);
       } catch (error) {
         console.error('Error fetching campaigns:', error);
       } finally {
@@ -31,8 +42,10 @@ const DemoCampaign = () => {
     fetchCampaigns();
   }, []);
 
-  const handleDonateClick = (campaignId) => {
-    localStorage.setItem('selectedCampaignId', campaignId);
+  const handleDonateClick = (campaign) => {
+    localStorage.setItem('selectedCampaignId', campaign.id);
+    localStorage.setItem('campaignGoalAmount', campaign.goal_amount);
+    localStorage.setItem('campaignAmountGathered', campaign.amount_gathered || 0);
     navigate('/user-login');
   };
 
@@ -42,13 +55,14 @@ const DemoCampaign = () => {
     <div className="max-w-6xl mx-auto p-6">
       <h1 className="text-3xl font-bold mb-6 text-center">Explore Active Campaigns</h1>
 
+      {/* Active Campaigns */}
       {loading ? (
         <p className="text-center">Loading campaigns...</p>
-      ) : campaigns.length === 0 ? (
+      ) : activeCampaigns.length === 0 ? (
         <p className="text-center text-gray-500">No active campaigns available at the moment.</p>
       ) : (
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-          {campaigns.map((campaign) => (
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-12">
+          {activeCampaigns.map((campaign) => (
             <div
               key={campaign.id}
               onClick={() => setSelectedCampaign(campaign)}
@@ -72,7 +86,7 @@ const DemoCampaign = () => {
               <button
                 onClick={(e) => {
                   e.stopPropagation(); // Prevent triggering modal
-                  handleDonateClick(campaign.id);
+                  handleDonateClick(campaign);
                 }}
                 className="bg-green-600 text-white py-2 px-4 rounded hover:bg-green-700 transition"
               >
@@ -81,6 +95,43 @@ const DemoCampaign = () => {
             </div>
           ))}
         </div>
+      )}
+
+      {/* Completed Campaigns */}
+      {completedCampaigns.length > 0 && (
+        <>
+          <h2 className="text-3xl font-bold mb-6 text-center">Successfully Completed Campaigns</h2>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+            {completedCampaigns.map((campaign) => (
+              <div
+                key={campaign.id}
+                className="bg-gray-100 shadow-md rounded-lg p-6 transition-transform hover:scale-105"
+              >
+                <img
+                  src={campaign.image_url}
+                  alt={campaign.title}
+                  className="rounded-md w-full h-48 object-cover mb-4"
+                />
+                <h2 className="text-xl font-semibold mb-2 capitalize">{campaign.title}</h2>
+                <p className="text-gray-700 mb-2">{campaign.description}</p>
+                <p className="text-sm text-gray-500 mb-1">Category: {campaign.category}</p>
+                <p className="text-sm text-gray-500 mb-1">Organization: {campaign.organization_name}</p>
+                <p className="text-sm text-gray-500 mb-1">
+                  Goal: ₹{parseFloat(campaign.goal_amount).toLocaleString()}
+                </p>
+                <p className="text-sm text-gray-500 mb-1">
+                  Raised: ₹{parseFloat(campaign.amount_gathered || 0).toLocaleString()}
+                </p>
+                <p className="text-sm text-gray-500 mb-4">
+                  Deadline: {new Date(campaign.deadline).toLocaleDateString()}
+                </p>
+                <p className="bg-green-600 text-white py-2 px-4 rounded text-center">
+                  Successfully Funded
+                </p>
+              </div>
+            ))}
+          </div>
+        </>
       )}
 
       {/* Modal Banner */}
@@ -94,7 +145,7 @@ const DemoCampaign = () => {
               ✕
             </button>
             <img
-              src={selectedCampaign.image_url }
+              src={selectedCampaign.image_url}
               alt={selectedCampaign.title}
               className="w-full h-48 object-cover rounded mb-4"
             />
@@ -109,7 +160,7 @@ const DemoCampaign = () => {
               Deadline: {new Date(selectedCampaign.deadline).toLocaleDateString()}
             </p>
             <button
-              onClick={() => handleDonateClick(selectedCampaign.id)}
+              onClick={() => handleDonateClick(selectedCampaign)}
               className="bg-green-600 text-white py-2 px-4 rounded hover:bg-green-700 transition w-full"
             >
               Donate Now

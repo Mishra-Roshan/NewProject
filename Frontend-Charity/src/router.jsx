@@ -1,60 +1,57 @@
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
-import RoleSelector from './components/RoleSelector.jsx';
-import Login from './pages/Login.jsx';
-import DonorDashboard from './pages/DonorDashboard.jsx';
-import OrgDashboard from './pages/OrgDashboard.jsx';
-import Register from './components/auth/Register.jsx';
-import UserRegister from './components/auth/user-register.jsx';
-//import Login from './components/auth/Login.jsx';
-import Home from './pages/Home.jsx';
-import Dashboard from './pages/Dashboard.jsx';
-import PrivateRoute from './utils/PrivateRoute.jsx'
-import CampaignList from './pages/campaigns/CampaignList.jsx';
-import CampaignDetail from './pages/campaigns/CampaignDetail.jsx';
-import ProtectedRoute from './components/ProtectedRoute.jsx';
-import DemoCampaign from './components/campaigns/demo/DemoCampaign.jsx';
-import UserLogin from './components/auth/UserLogin.jsx';
-import CreateCampaign from './pages/organization/CreateCampaign.jsx';
 import Navbar from './components/auth/layout/Navbar.jsx';
+import Home from './pages/Home.jsx';
+import Login from './pages/Login.jsx';
+import Register from './components/auth/Register.jsx';
+import UserLogin from './components/auth/UserLogin.jsx';
+import UserRegister from './components/auth/user-register.jsx';
+import CampaignView from './pages/campaigns/CampaignDetail.jsx';
+import CreateCampaign from './pages/organization/CreateCampaign.jsx';
+import DemoCampaign from './components/campaigns/demo/DemoCampaign.jsx';
 import PasswordReset from './components/auth/PasswordReset.jsx';
 import VerifyOtpResetPassword from './components/auth/VerifyOtpResetPassword.jsx';
- 
-
+import {ProtectedOrganizationRoute, ProtectedDonorRoute} from './components/ProtectedRoute.jsx';
+import DonorDashboard from './pages/DonorDashboard.jsx';
 
 export default function AppRouter() {
   return (
     <Router>
-      <Navbar />
-      <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="/select-role" element={<RoleSelector />} />
-        <Route path="/donor-dashboard" element={
-          <ProtectedRoute><DonorDashboard /></ProtectedRoute>
-        } />
-        <Route path="/org-dashboard" element={
-          <ProtectedRoute><OrgDashboard /></ProtectedRoute>
-        } />
-        <Route path="/register" element={<Register />} />
-        <Route path="/login" element={<Login />} />
-        
-        {/* <Route path="/campaigns" element={<CampaignList />} /> */}
-        <Route path="/campaigns" element={<CampaignDetail />} />
-        <Route path="/user-login" element={<UserLogin />} />
-        <Route path="/user-register" element={<UserRegister />} />
-        <Route path="/campaigns/demo" element={<DemoCampaign />} />
-        <Route path="/create-campaign" element={<CreateCampaign />} />
-        <Route path="/user-forgot-password" element={<PasswordReset />} />
-        <Route path="/verify-otp" element = {< VerifyOtpResetPassword/>} />
-       
+      <div className="app-container">
+        <Navbar />
+        <main className="main-content">
+          <Routes>
+            {/* Public Routes */}
+            <Route path="/" element={<Home />} />
+            <Route path="/login" element={<Login />} />
+            <Route path="/register" element={<Register />} />
+            <Route path="/user-login" element={<UserLogin />} />
+            <Route path="/user-register" element={<UserRegister />} />
+            <Route path="/campaigns" element={<DemoCampaign />} />
+            <Route path="/user-forgot-password" element={<PasswordReset />} />
+            <Route path="/verify-otp" element={<VerifyOtpResetPassword />} />
+            
 
-        
-        <Route path="/dashboard" element={
-          <PrivateRoute>
-            <Dashboard />
-          </PrivateRoute>
-          
-        } />
-      </Routes>
+            {/* Protected Organization Routes */}
+            <Route path="/org-dashboard" element={
+              <ProtectedOrganizationRoute>
+                <CampaignView />
+              </ProtectedOrganizationRoute>
+            } />
+            <Route path="/create-campaign" element={
+              <ProtectedOrganizationRoute>
+                <CreateCampaign />
+              </ProtectedOrganizationRoute>
+            } />
+
+            {/* Protected User Routes */}
+            <Route path="/donor-dashboard" element={
+              <ProtectedDonorRoute>
+                <DonorDashboard />
+              </ProtectedDonorRoute>
+            } />
+          </Routes>
+        </main>
+      </div>
     </Router>
   );
 }

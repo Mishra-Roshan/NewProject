@@ -22,7 +22,7 @@ const Home = () => {
   }, []);
 
   const handleViewCampaigns = () => {
-    navigate('/campaigns/demo');
+    navigate('/campaigns');
   };
 
   const handleStartCampaign = () => {
