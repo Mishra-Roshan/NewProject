@@ -55,6 +55,7 @@ const CampaignView = () => {
     }
   };
 
+  #to handle review submit
   const handleReviewSubmit = async () => {
     if (!reviewText.trim() || rating === 0) {
       alert('Please provide a review and a rating.');
@@ -147,6 +148,8 @@ const CampaignView = () => {
           ))}
         </div>
       </div>
+
+      #review code
       <div className="mt-12 p-6 bg-gray-100 rounded-lg shadow-md">
       {existingReview && existingReview.length > 0 ? (
         <div>
